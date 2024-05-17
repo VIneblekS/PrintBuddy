@@ -1,0 +1,71 @@
+/*		 NAVBAR SECTION 		*/
+
+header {
+	height: 65px;
+	position: fixed;
+	top: 0px;
+	z-index: 1;
+}
+
+.navbar-wrapper {
+	padding-left: 4.5%;
+	padding-right: 1.5%;
+	box-sizing: border-box;
+}
+
+#navbar a {
+	padding: 8 13;
+}
+
+.navbar-button{
+	padding: 3 15;
+}
+
+.navbar-button-border {
+	border-color: var(--primary-color);
+	border-style: solid;
+	border-radius: 5px;
+	border-width: 0.7px;
+}
+
+/*		 HERO SECTION 		*/
+
+.hero-text-wrapper {
+	flex: 2.5;
+}
+
+/*		 ABOUT SECTION 		*/
+
+.logo-wrapper {
+	max-width: 220px;
+}
+
+
+/*		 FEEDBACK SECTION 		*/
+
+.feedback-card {
+	min-height: 220px;
+	border-radius: 45px;
+	position: relative;
+}
+
+.feedback-photo {
+	position: absolute;
+	top: -15%;
+}
+
+/*		 ADD MANUAL BUTTON 		*/
+
+.add-manual {
+	position: fixed;
+	right: 30px;
+	bottom: 9%;
+	z-index: 0;
+}
+
+.add-faq {
+	position: fixed;
+	right: 30px;
+	bottom: 9%;
+	z-index: 0;
+}

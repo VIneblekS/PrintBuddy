@@ -1,0 +1,62 @@
+/* 			COLORS 			*/
+
+.black {
+	color: #000;
+}
+
+.white {
+	color: #fff;
+}
+
+.blue {
+	color: var(--primary-color);
+}
+
+.red {
+	color: red;
+}
+
+/* 			FONT SIZES 			*/
+
+.size15px {
+	font-size: 15px;
+}
+
+.size16px {
+	font-size: 16px;
+}
+
+.size17px {
+	font-size: 17px;
+}
+
+.size18px {
+	font-size: 18px;
+}
+
+.size20px {
+	font-size: 20px;
+}
+
+.size22px {
+	font-size: 22px;
+}
+
+.size26px {
+	font-size: 26px;
+}
+
+.size30px {
+	font-size: 30px;
+}
+
+/* 			TEXT ALIGN 			*/
+
+.text-center {
+	text-align: center;
+}
+
+
+.italic {
+	font-style: italic;
+}

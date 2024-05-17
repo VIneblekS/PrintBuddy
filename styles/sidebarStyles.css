@@ -1,0 +1,56 @@
+/*		 SIDEBAR SECTION 		*/
+
+.sidebar {
+	box-shadow: -3px 0px 2px var(--primary-color-60T);
+	padding-left: 20px;
+	box-sizing: border-box;
+	position: fixed;
+	right: -253px;
+	top: 0;
+	transition: 0.3s;
+	z-index: 2;
+}
+
+.left-menu {
+	position: fixed;
+	left: 0;
+	top: 0;
+	box-shadow: 3px 0px 2px var(--primary-color-60T);
+	box-sizing: border-box;
+	padding: 40px 0;
+	transition: 0.3s;
+	z-index: 2;
+}
+
+.menu-bottom {
+	position: fixed;
+	bottom: 5%;
+	z-index: 2;
+	width: 240px;
+}
+
+.sidebar-icon {
+	max-width: 20px;
+}
+
+.answer {
+	display: none;
+	box-sizing: border-box;
+}
+
+.answer.active {
+	display: block;
+}
+
+.sidebar.active {
+	right: 0px;
+	top: 0;
+}
+
+.sidebar-username {
+	height: 65px;
+}
+
+.close {
+	max-width: 12px;
+}
