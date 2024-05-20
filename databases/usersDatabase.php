@@ -2,9 +2,9 @@
 
 	// Define database constants
 	define('DB_HOST', 'localhost');
-	define('DB_USER', 'robo_Stefan');
+	define('DB_USER', 'printbuddy_Stefan');
 	define('DB_PASWORD', 'Stefan24.09.2007');
-	define('DB_NAME', 'robo_infoed_db');
+	define('DB_NAME', 'printbuddy_infoed_db');
 
 	// Create connection	
 	$connection = new mysqli(DB_HOST, DB_USER, DB_PASWORD, DB_NAME);
