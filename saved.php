@@ -63,7 +63,7 @@
 							<?php $printerNameConc = str_replace(' ', '', $manual['printerName']); ?>
 							<div class="white-bg manual-save">
 								<div class="flex-space-between align-center">
-									<div class="flex-left top-bottom-20px gap-20px left-20px align-center printer-container pointer" id="<?php echo $printerNameConc ?>">
+									<div class="flex-left top-bottom-20px gap-20px left-20px align-center printer-container pointer printer-card" id="<?php echo $printerNameConc ?>">
 										<div class="img22 show-printer">
 											<img src="manuals/<?php echo $printerNameConc?>/<?php echo $printerNameConc."Photo"?>">
 										</div>
@@ -101,6 +101,7 @@
 	<script src="javascript/return.js"></script>
 	<script src="javascript/deleteSearch.js"></script>
 	<script src="javascript/redoSearch.js"></script>
+	<script src="javascript/showPrinter.js"></script>
 	<?php if (isset($_SESSION['admin'])): ?>
 		<script src = "javascript/admin.js"></script>
 	<?php endif ?>

@@ -14,6 +14,8 @@
 	}
 
 	function toKey($text) {
+		if (is_numeric($text))
+			return "-";
 		$token = strtok($text, " .-");
 		$key = "";
 
@@ -22,6 +24,8 @@
 			$token = strtok(" .-");
 		}
 
+		if (trim($key) == '')
+			return "-";
 		return $key;
 	}
 
@@ -29,8 +33,9 @@
 		setcookie('search', $userSearch, null, '/', $_SERVER['HTTP_HOST'], true, true);
 		if (isset($_COOKIE['connection']))
 			addSerachToHistory($historyConnection, $userSearch);
-		$userSearch = toKey($userSearch);
-		$sql = "SELECT * FROM manuals WHERE (printerNameKey LIKE '%$userSearch%' OR description LIKE '%$userSearch%')";
+		$userSearchKey = toKey($userSearch);
+		setcookie('key', $userSearchKey, null, '/', $_SERVER['HTTP_HOST'], true, true);
+		$sql = "SELECT * FROM manuals WHERE (printerName LIKE '%$userSearch%' OR printerNameKey LIKE '%$userSearchKey%')";
 		$results = mysqli_query($connection, $sql);
 		$results = mysqli_fetch_all($results, MYSQLI_ASSOC);
 		if ($results) {

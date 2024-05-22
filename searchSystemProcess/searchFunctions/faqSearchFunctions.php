@@ -8,6 +8,8 @@
 	}
 
 	function toKey($text) {
+		if (is_numeric($text))
+			return "-";
 		$token = strtok($text, " .-");
 		$key = "";
 
@@ -16,13 +18,15 @@
 			$token = strtok(" .-");
 		}
 
+		if (trim($key) == '')
+			return "-";
 		return $key;
 	}
 
 	function search($connection, $userSearch) {
 		setcookie('search', $userSearch, null, '/', $_SERVER['HTTP_HOST'], true, true);
-		$userSearch = toKey($userSearch);
-		$sql = "SELECT * FROM faq WHERE (questionKey LIKE '%$userSearch%' OR answerKey LIKE '%$userSearch%')";
+		$userSearchKey = toKey($userSearch);
+		$sql = "SELECT * FROM faq WHERE (questionKey LIKE '%$userSearchKey%' OR question LIKE '%$userSearch%')";
 		$results = mysqli_query($connection, $sql);
 		$results = mysqli_fetch_all($results, MYSQLI_ASSOC);
 		if ($results) {	

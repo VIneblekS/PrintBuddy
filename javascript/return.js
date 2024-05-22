@@ -10,7 +10,10 @@ if (returnFAQ != null)
 
 if (returnManuals != null)
 	returnManuals.addEventListener('click', () => {
-		window.location.href = "../manuals.php";
+		if (document.referrer.split('/')[2]!=location.hostname)
+			window.location.href = '../manuals.php';
+		else
+			window.location = document.referrer;
 	});
 
 if (returnPrevious != null)
