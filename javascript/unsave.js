@@ -11,6 +11,8 @@ function deleteFromSaves(event) {
 
 	event.preventDefault();
 
+	console.log(eventIndex);
+
 	var xhr = new XMLHttpRequest();
 
 	var unsave = deleteSaves[eventIndex].id;
@@ -29,9 +31,8 @@ function deleteFromSaves(event) {
 			} else if(errors == null) {
 				saves[eventIndex].remove();
 
-				deleteSaves = document.querySelectorAll('.delete-save');
-
-				if (deleteSaves.length == 0)
+				var currSaves = document.querySelectorAll('.manual-save');
+				if (currSaves.length == 0)
 					window.location.reload();
 			}
 		}
