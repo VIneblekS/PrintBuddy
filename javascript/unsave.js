@@ -11,8 +11,6 @@ function deleteFromSaves(event) {
 
 	event.preventDefault();
 
-	console.log(eventIndex);
-
 	var xhr = new XMLHttpRequest();
 
 	var unsave = deleteSaves[eventIndex].id;
