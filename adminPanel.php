@@ -83,7 +83,7 @@
 					</div>
 				<?php endif ?>
 			</div>
-			<div class="w85per flex-column gap-40px">
+			<div class="w75per flex-column gap-40px">
 				<h1 class="blue size22px">Manuale propuse</h1>
 				<?php if($manualNumber > 0): ?>
 					<div class="blue-bg faq-grid-container">
@@ -91,7 +91,7 @@
 							<?php $printerNameConc = str_replace(' ', '', $manual['printerName']); ?>
 							<div class="white-bg manual-req">
 								<div class="flex-space-between align-center">
-									<div class="flex-left top-bottom-20px gap-20px left-20px align-center printer-container pointer" id="<?php echo $printerNameConc ?>">
+									<div class="flex-left top-bottom-20px gap-20px left-20px align-center printer-container pointer printer-card" id="<?php echo $printerNameConc ?>">
 										<div class="img22 show-printer">
 											<img src="manuals/<?php echo $printerNameConc?>/<?php echo $printerNameConc."Photo"?>">
 										</div>
