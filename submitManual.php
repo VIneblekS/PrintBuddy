@@ -38,7 +38,7 @@
 						<h2 class="size18px normal">Adaugă manualul imprimantei :</h2>
 					<div class="flex-column gap-5px h72px">
 						<div class="wide-text-input flex-left align-center full-box gap-15px">
-							<label for="printerManual">
+							<label for="document">
 								<div class="img12">	
 									<img src="images/generalElements/uploadIcon.png">
 								</div>
@@ -52,7 +52,7 @@
 						<h2 class="size18px normal">Adaugă poza imprimantei :</h2>
 					<div class="flex-column gap-5px h72px">
 						<div class="wide-text-input flex-left align-center full-box gap-15px">
-							<label for="printerImage">
+							<label for="image">
 								<div class="img12">	
 									<img src="images/generalElements/uploadIcon.png">
 								</div>
