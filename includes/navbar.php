@@ -9,13 +9,13 @@
 			<h1 class = "font-medium text-lg text-primaryColor font-sans">PRINTBUDDY</h1>
 		</div>
 		<div class = "hidden md:flex justify-center items-center gap-3.5">
-			<a href = "home.php" class = "text-normal text-base text-primaryColor">Acasă</a>
+			<a href = "index.php" class = "text-normal text-base text-primaryColor">Acasă</a>
 			<div class = "h-4 w-px bg-primaryColor/30"></div>
 			<a href = "availableCourses.php" class = "text-normal text-base text-primaryColor">Cursuri</a>
 			<div class = "h-4 w-px bg-primaryColor/30"></div>
 			<a href = "availableManuals.php" class = "text-normal text-base text-primaryColor">Manaule</a>
 			<div class = "h-4 w-px bg-primaryColor/30"></div>
-			<a href = "FAQ.php" class = "text-normal text-base text-primaryColor">FAQ</a>
+			<a href = "faq.php" class = "text-normal text-base text-primaryColor">FAQ</a>
 		</div>
 		<div class = "hidden md:flex justify-center items-center gap-8">
             <?php if(!checkIfConnected()):?>

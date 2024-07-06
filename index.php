@@ -12,7 +12,7 @@
 	<?php include 'includes/navbar.php' ?>
 	<?php include 'includes/sidebar.php' ?>
 
-	<body class = "bg-white mt-12">
+	<body class = "mt-12">
 		<section class = "w-full h-96 sm:h-120 md:h-full overflow-hidden relative">
 			<div class = "masked-video">	
 				<video class="w-full h-full object-fill" autoplay muted loop>
@@ -97,7 +97,3 @@
 
 	<?php include 'includes/footer.php' ?>
 </html>
-
-
-
-<script src="sessions/session.js"></script>

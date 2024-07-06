@@ -6,6 +6,16 @@ tailwind.config = {
             lg: '1325px',
         },
         extend: {
+            keyframes: {
+                'rotateTo-90': {
+                  '0%': {transform: 'rotate(0deg)'},
+                  '100%': { transform: 'rotate(-90deg)' },
+                },
+                'rotateTo0': {
+                    '0%': {transform: 'rotate(0deg)'},
+                    '100%': { transform: 'rotate(-90deg)' },
+                  },
+            },
             spacing: {
                 '82': '328px',
             },
@@ -30,26 +40,12 @@ tailwind.config = {
                 '10px' : '10px',
                 '8px' : '8px',
             },
-            maxHeight: {
-                '67' : '272px',
-                '58' : '232px',
-                '150': '600px',
-                '135': '540px',
-                '120': '480px',
-                '280px': '280px',
-                '92': '368px',
-                '70' : '280px',
-                '86': '344px',
-                '88': '352px',
-                '82': '328px',
-                '100': '400px',
-                '105': '420px',
-                '6.5': '26px',
-                '300px': '300px', 
-                '84' : '336px',
+            inset: {
+                '1/12': '8.333%',
             },
             width: {
                 '180' : '720px',
+                '160' : '640px',
                 '67' : '272px',
                 '54' : '208px',
                 '150': '600px',
