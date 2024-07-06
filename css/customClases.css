@@ -1,0 +1,15 @@
+*::-webkit-scrollbar {
+    display: none;
+}
+
+.masked-video{
+  object-fit: cover;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0.7) 40%, rgba(0, 0, 0, 0.1) 80%, rgba(0, 0, 0, 0) 90%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0.7) 40%, rgba(0, 0, 0, 0.1) 80%, rgba(0, 0, 0, 0) 90%, rgba(0, 0, 0, 0) 100%);
+  mask-size: cover;
+  -webkit-mask-size: cover;
+}
+
+.gradient-overlay {
+  background: linear-gradient(to bottom, #2D0F44 0%, #4E0A8590 56%, #8F00FF00 100%);
+}
