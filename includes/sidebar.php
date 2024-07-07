@@ -5,7 +5,13 @@
             <?php if(checkIfConnected()):?>
                 <a class = "flex items-center gap-3.5 text-primaryColor">
                     <img src="generalIcons/userIcon.png" alt="" class = "h-9 w-9">
-                    <p>stefan_dore_</p>
+                    <p>
+						<?php 
+							if (session_status() !== 2)
+								session_start();
+							echo $_SESSION['username'];
+						?>
+					</p>
                 </a>
             <?php else: ?>       
                 <a href="logIn.php" class = "h-14 w-64 flex items-center gap-3.5 text-primaryColor">

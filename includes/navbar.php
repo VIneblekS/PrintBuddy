@@ -1,5 +1,5 @@
 <?php 
-    include 'generalFunctions/generalFunctions.php';
+    include_once 'generalFunctions/generalFunctions.php';
 ?>
 
 <navbar class = "w-full h-12 bg-white shadow-md shadow-primaryColor/25 flex justify-center items-center fixed z-10 top-0">

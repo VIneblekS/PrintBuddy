@@ -37,6 +37,7 @@
 		$resultData = mysqli_fetch_assoc($resultData);
         //
         $_SESSION['username'] = $resultData['username'];
+        $_SESSION['admin'] = $resultData['admin'];
     }
 
     function destroyData() { 

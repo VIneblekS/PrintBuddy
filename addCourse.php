@@ -62,7 +62,7 @@
 			</div>
 		</div>
     </body>
-	<script src="preview.js"></script>
+	<script src="javascript/preview.js"></script>
 	<script src="javascript/return.js"></script>
 	<script src="javascript/manageSections.js"></script>
 	<script src="javascript/addCourse.js"></script>

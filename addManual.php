@@ -73,7 +73,7 @@
 			<button id="submit" class = "w-32 h-9 items-center flex justify-center text-xs sm:text-sm sm:w-36 sm:h-10 bg-primaryColor/80 rounded-lg font-normal text-white shadow-md shadow-black/30">Adaugă manualul</button>
 		</div>
     </body>
-	<script src="preview.js"></script>
+	<script src="javascript/preview.js"></script>
 	<script src="javascript/return.js"></script>
     <script src="javascript/addManual.js"></script>
 </html>

@@ -30,7 +30,7 @@
                     <h1 class = "absolute text-xs bg-white px-2.5 -top-2 left-3">Răspuns</h1>
                 </div>
             </form>
-			<div id="error" class = "w-80 sm:w-105 md:w-120 lg:w-135 flex items-center gap-2 hidden">
+			<div id="error" class = "w-72 sm:w-96 md:w-105 lg:w-120 flex items-center gap-2 hidden">
 				<img src="generalIcons/errorIcon.png" alt="" class = "w-7 h-7 md:w-8 md:h-8">
 				<p class = "text-black text-xs md:text-sm">Toate câmpurile trebuiesc completate!</p>
 			</div>

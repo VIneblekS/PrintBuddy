@@ -9,12 +9,11 @@ function getDeviceId() {
   
     var xhr = new XMLHttpRequest();
 
-    xhr.open('POST', 'sessions/session.php', true);
+    xhr.open('POST', 'sessions/session.php', false);
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     
     xhr.onload = function() {
         if (this.status == 200) {
-            
         }
     }
 
