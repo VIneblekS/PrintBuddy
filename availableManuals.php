@@ -1,3 +1,34 @@
+<?php
+	include 'databases/databases.php';
+	include 'generalFunctions/generalFunctions.php';
+
+	$admin = 0;
+
+	if(isset($_COOKIE['refreshToken']) && !isset($_COOKIE['accessToken']))
+		echo '<script src = "sessions/session.js"></script>';
+
+	session_start();
+
+	if(checkIfConnected()) {
+		$admin = $_SESSION['admin'];
+		$username = $_SESSION['username'];
+	}
+
+	$sql = "SELECT * FROM manuals";
+	$manuals = mysqli_query($conn['main'], $sql);
+	$manuals = mysqli_fetch_all($manuals, MYSQLI_ASSOC);
+
+	$sql = "SELECT * FROM saves WHERE username = '$username'";
+	$saves = mysqli_query($conn['main'], $sql);
+	$saves = mysqli_fetch_all($saves, MYSQLI_ASSOC);
+
+	$saved = [];
+
+	foreach($saves as $save)
+		$saved[] = $save['printerName'];
+
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -8,10 +39,50 @@
 		<link rel="stylesheet" href="css/customClases.css">
 		<title>Printbuddy</title>
 	</head>
-	<body>
-		<a href="addManual.php">MANUAL NOU</a>
-		<a href="manuals/prusa_mini.php">MANUAL 1</a>
+
+	<?php include 'includes/navbar.php' ?>
+	<?php include 'includes/sidebar.php' ?>
+
+	<body class = "mt-12 pt-12 md:pt-28 flex flex-col items-center">
+		<div class = "flex flex-col items-center gap-8 md:gap-16 w-82 sm:w-2/3 md:w-full">	
+			<h1 class = "font-bold text-2xl sm:text-2.5xl md:text-4xl text-primaryColor">Manuale disponibile</h1>
+			<div class = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 w-80.5 sm:w-108.5 md:w-177 lg:w-273.5">
+				<?php foreach($manuals as $manual): ?>
+					<div id="<?php echo $manual['id']?>">
+						<div id = "<?php echo "manuals/".strtolower(str_replace(' ', '_', $manual['name']))?>" class = "relative w-80.5 h-80.5 sm:w-108.5 sm:h-108.5 md:w-80.5 md:h-80.5 p-6 border border-primaryColor rounded-xl shadow-md shadow-black/15">						
+							<img src="<?php echo "manuals/uploads/".$manual['image']?>" alt="" class = "w-72 h-72 sm:w-96 sm:h-96 md:w-72 md:h-72" onclick="showManual(this.parentElement)">
+							<div id="<?php echo $manual['name']?>" class = "flex justify-center items-center gap-2 absolute -bottom-3 left-1/2 -translate-x-1/2 bg-white px-4">
+								<p class = "text-base" onclick="showManual(this.parentElement.parentElement)"><?php echo $manual['name'] ?></p>
+								<?php if(checkIfConnected()):?>
+									<img src="generalIcons/savedIcon.png" alt="" class = "w-6 h-6 <?php if(in_array($manual['name'], $saved)) echo "hidden" ?>" onclick="toggleSaved(this.parentElement)">
+									<img src="generalIcons/filledSavedIcon.png" alt="" class = "w-6 h-6 <?php if(!in_array($manual['name'], $saved)) echo "hidden" ?>" onclick="toggleSaved(this.parentElement)">
+								<?php endif ?>
+							</div>
+							<?php if($admin): ?>
+								<img id="<?php echo $manual['id']?>" src="generalIcons/discardIcon.png" alt="" class = "w-3 h-3 absolute right-4 top-4" onclick="togglePopUp(this.id)">
+							<?php endif ?>
+						</div>
+					</div>
+				<?php endforeach ?>
+			</div>
+		</div>
+		<div id = "popUp" class = "fixed top-0 left-0 w-full h-full backdrop-blur-sm bg-primaryColor bg-opacity-10 flex justify-center items-center hidden">
+			<div class = "w-82 sm:w-105 sm:h-44 h-40 md:w-135 shadow-xl shadow-black/15 absolute bg-white flex justify-center items-center rounded-2xl">
+				<div class = "flex flex-col items-center gap-3 md:gap-6 w-72 sm:w-96 md:w-120">	
+					<h1 class = "text-sm md:text-base lg:text-lg">Ești sigur că dorești să ștergi acest manual definitiv?</h1>
+					<div class = "flex gap-4">
+						<button id="deleteButton" class = "w-28 h-8 md:w-30 md:h-9 items-center flex justify-center text-xs md:text-sm text-white bg-red-700 rounded-lg font-normal shadow-md shadow-black/20" onclick = "deleteFAQ(this)">Șterge</button>
+						<button class = "w-28 h-8 md:w-30 md:h-9 items-center flex justify-center text-xs md:text-sm text-red-700 border border-red-700 rounded-lg font-normal shadow-md shadow-black/20" onclick="togglePopUp(this.id)">Anulează</button>
+					</div>
+				</div>
+			</div>
+		</div>
     </body>
 	
+	<?php include 'includes/footer.php' ?>
 </html>
+
+<script src="javascript/save.js"></script>
+<script src="javascript/deleteManual.js"></script>
+<script src ="javascript/showManual.js"></script>
 

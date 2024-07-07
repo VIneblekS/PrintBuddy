@@ -1,11 +1,17 @@
 <?php
-	include 'sessions/session.php';
+	include 'databases/databases.php';
+	include 'generalFunctions/generalFunctions.php';
 
 	$sql = "SELECT * FROM faqs";
 	$faqs = mysqli_query($conn['main'], $sql);
 	$faqs = mysqli_fetch_all($faqs, MYSQLI_ASSOC);
 
 	$admin = 0;
+
+	if(isset($_COOKIE['refreshToken']) && !isset($_COOKIE['accessToken']))
+		echo '<script src = "sessions/session.js"></script>';
+
+	session_start();
 
 	if(checkIfConnected())
 		$admin = $_SESSION['admin'];
@@ -50,9 +56,9 @@
 			</div>
 		</div>
 		<div id = "popUp" class = "fixed top-0 left-0 w-full h-full backdrop-blur-sm bg-primaryColor bg-opacity-10 flex justify-center items-center hidden">
-			<div class = "w-82 sm:w-105 sm:h-44 h-40 md:w-135 shadow-xl shadow-black/15 absolute bg-white flex items-center rounded-2xl">
-				<div class = "flex flex-col gap-3 md:gap-6 ml-5 w-72 sm:w-96 md:w-120">	
-					<h1 class = "text-sm md:text-base lg:text-lg">Ești sigur că dorești să ștergi acest manual definitiv?</h1>
+			<div class = "w-82 sm:w-105 sm:h-44 h-40 md:w-135 shadow-xl shadow-black/15 absolute bg-white flex justify-center items-center rounded-2xl">
+				<div class = "flex flex-col items-center gap-3 md:gap-6 w-72 sm:w-96 md:w-120">	
+					<h1 class = "text-sm md:text-base lg:text-lg">Ești sigur că dorești să ștergi acestă întrebare definitiv?</h1>
 					<div class = "flex gap-4">
 						<button id="deleteButton" class = "w-28 h-8 md:w-30 md:h-9 items-center flex justify-center text-xs md:text-sm text-white bg-red-700 rounded-lg font-normal shadow-md shadow-black/20" onclick = "deleteFAQ(this)">Șterge</button>
 						<button class = "w-28 h-8 md:w-30 md:h-9 items-center flex justify-center text-xs md:text-sm text-red-700 border border-red-700 rounded-lg font-normal shadow-md shadow-black/20" onclick="togglePopUp(this.id)">Anulează</button>
