@@ -25,21 +25,28 @@
             <img src="generalIcons/closeIcon.png" alt="" class = "h-3 w-3 cursor-pointer" onclick = "changeSidebarState()">
         </div>
 		<div class = "h-px w-64 bg-primaryColor/40"></div>
-		<a href="courses.php" class = "h-14 w-64 flex items-center gap-3.5 text-primaryColor">
-			<img src="generalIcons/coursesIcon.png" alt="" class = "h-9 w-9">
-			<p>Cursuri</p>
-		</a>
-		<div class = "h-px w-64 bg-primaryColor/40"></div>
-		<a href="manuals.php" class = "h-14 w-64 flex items-center gap-3.5 text-primaryColor">
-			<img src="generalIcons/manualsIcon.png" alt="" class = "h-9 w-9">
-			<p>Manuale</p>
-		</a>
-		<div class = "h-px w-64 bg-primaryColor/40"></div>
-		<a href="faq.php" class = "h-14 w-64 flex items-center gap-3.5 text-primaryColor">
-			<img src="generalIcons/faqIcon.png" alt="" class = "h-9 w-9">
-			<p>FAQ</p>
-		</a>
-		<div class = "h-px w-64 bg-primaryColor/40"></div>
+		<div class = "md:hidden">
+			<a href="index.php" class = "pl-2 h-14 w-64 flex items-center gap-5 text-primaryColor">
+				<img src="generalIcons/homeIcon.png" alt="" class = "h-6 w-6">
+				<p>Acasă</p>
+			</a>
+			<div class = "h-px w-64 bg-primaryColor/40"></div>
+			<a href="courses.php" class = "h-14 w-64 flex items-center gap-3.5 text-primaryColor">
+				<img src="generalIcons/coursesIcon.png" alt="" class = "h-9 w-9">
+				<p>Cursuri</p>
+			</a>
+			<div class = "h-px w-64 bg-primaryColor/40"></div>
+			<a href="manuals.php" class = "h-14 w-64 flex items-center gap-3.5 text-primaryColor">
+				<img src="generalIcons/manualsIcon.png" alt="" class = "h-9 w-9">
+				<p>Manuale</p>
+			</a>
+			<div class = "h-px w-64 bg-primaryColor/40"></div>
+			<a href="faq.php" class = "h-14 w-64 flex items-center gap-3.5 text-primaryColor">
+				<img src="generalIcons/faqIcon.png" alt="" class = "h-9 w-9">
+				<p>FAQ</p>
+			</a>
+			<div class = "h-px w-64 bg-primaryColor/40"></div>
+		</div>
 		<a href="community.php" class = "h-14 w-64 flex items-center gap-3.5 text-primaryColor">
 			<img src="generalIcons/communityIcon.png" alt="" class = "h-9 w-9">
 			<p>Comunitate</p>
@@ -56,8 +63,8 @@
                 <p>Profil</p>
             </a>
             <div class = "h-px w-64 bg-primaryColor/40"></div>
-            <a href="saved.php" class = "h-14 w-64 flex items-center gap-3.5 text-primaryColor">
-                <img src="generalIcons/savedIcon.png" alt="" class = "h-9 w-9">
+            <a href="saved.php" class = "h-14 w-64 pl-1 flex items-center gap-4 text-primaryColor">
+                <img src="generalIcons/savedIcon.png" alt="" class = "h-7 w-7">
                 <p>Salvate</p>
             </a>
             <div class = "h-px w-64 bg-primaryColor/40"></div>

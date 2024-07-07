@@ -4,10 +4,12 @@
 
 <navbar class = "w-full h-12 bg-white shadow-md shadow-primaryColor/25 flex justify-center items-center fixed z-10 top-0">
 	<div class = "w-full ml-6 lg:ml-12 mr-10 flex justify-between items-center">
-		<div class = "flex justify-center items-center gap-3">
-			<img src="images&videoes/logoLightTheme.png" alt="" class = "w-9">		
-			<h1 class = "font-medium text-lg text-primaryColor font-sans">PRINTBUDDY</h1>
-		</div>
+		<a href="index.php">	
+			<div class = "flex justify-center items-center gap-3">
+				<img src="images&videoes/logoLightTheme.png" alt="" class = "w-9">		
+				<h1 class = "font-medium text-lg text-primaryColor font-sans">PRINTBUDDY</h1>
+			</div>
+		</a>
 		<div class = "hidden md:flex justify-center items-center gap-3.5">
 			<a href = "index.php" class = "text-normal text-base text-primaryColor">Acasă</a>
 			<div class = "h-4 w-px bg-primaryColor/30"></div>
