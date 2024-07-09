@@ -70,8 +70,6 @@ function createNewCourse() {
 
         xhr.onload = function() {
             if (xhr.status == 200) {
-                
-                console.log(this.responseText);
 
                 courseId = JSON.parse(this.responseText);
                 resolve(courseId);

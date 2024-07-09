@@ -7,7 +7,7 @@
     $description = $_POST['courseDescription'];
     $author = $_SESSION['username'];
     //
-    $_FILES['previewImage']['name'] = 'previewImage_'.strtolower(str_replace(' ', '_', $title));
+    $_FILES['previewImage']['name'] = 'previewImage_'.str_replace(' ', '_', $title);
     $imageName = $_FILES['previewImage']['name'];
     $imgTmpName = $_FILES['previewImage']['tmp_name'];
     

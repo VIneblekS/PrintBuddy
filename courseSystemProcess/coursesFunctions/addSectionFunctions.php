@@ -49,7 +49,7 @@
             move_uploaded_file($imgTmpName, $_SERVER['DOCUMENT_ROOT'].'/courses/uploads/'.$imageName);
             //
             $imageContent = $imageName;
-            $contentType = 'tripleImage';
+            $contentType = 'image';
             //
             $sql = "INSERT INTO section_content (sectionId, contentType, content) VALUES ('$sectionId', '$contentType', '$imageContent')";
             mysqli_query($conn['main'], $sql);
@@ -66,11 +66,12 @@
             //
             $imageContent = $imageName;
             $textContent = $_POST['description'.$i];
-            $contentType = 'tripleImageDescription';
+            $contentType = 'text';
             //
             $sql = "INSERT INTO section_content (sectionId, contentType, content) VALUES ('$sectionId', '$contentType', '$textContent')";
             mysqli_query($conn['main'], $sql);
-
+            //
+            $contentType = 'image';
             $sql = "INSERT INTO section_content (sectionId, contentType, content) VALUES ('$sectionId', '$contentType', '$imageContent')";
             mysqli_query($conn['main'], $sql);
         }
@@ -85,11 +86,12 @@
         //
         $imageContent = $imageName;
         $textContent = $_POST['description'];
-        $contentType = 'textImage';
+        $contentType = 'text';
         //
         $sql = "INSERT INTO section_content (sectionId, contentType, content) VALUES ('$sectionId', '$contentType', '$textContent')";
         mysqli_query($conn['main'], $sql);
-
+        //
+        $contentType = 'image';
         $sql = "INSERT INTO section_content (sectionId, contentType, content) VALUES ('$sectionId', '$contentType', '$imageContent')";
         mysqli_query($conn['main'], $sql);            
     }

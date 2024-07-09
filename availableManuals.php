@@ -49,9 +49,9 @@
 				<?php foreach($manuals as $manual): ?>
 					<div id="<?php echo $manual['id']?>">
 						<div id = "<?php echo "manuals/".strtolower(str_replace(' ', '_', $manual['name']))?>" class = "relative w-80.5 h-80.5 sm:w-108.5 sm:h-108.5 md:w-80.5 md:h-80.5 p-6 border border-primaryColor rounded-xl shadow-md shadow-black/15">						
-							<img src="<?php echo "manuals/uploads/".$manual['image']?>" alt="" class = "w-72 h-72 sm:w-96 sm:h-96 md:w-72 md:h-72" onclick="showManual(this.parentElement)">
+							<img src="<?php echo "manuals/uploads/".$manual['image']?>" alt="" class = "w-68 h-68 sm:w-96 sm:h-96 md:w-68 md:h-68" onclick="showManual(this.parentElement)">
 							<div id="<?php echo $manual['name']?>" class = "flex justify-center items-center gap-2 absolute -bottom-3 left-1/2 -translate-x-1/2 bg-white px-4">
-								<p class = "text-base" onclick="showManual(this.parentElement.parentElement)"><?php echo $manual['name'] ?></p>
+								<p class = "text-base  whitespace-nowrap" onclick="showManual(this.parentElement.parentElement)"><?php echo $manual['name'] ?></p>
 								<?php if(checkIfConnected()):?>
 									<img src="generalIcons/savedIcon.png" alt="" class = "w-6 h-6 <?php if(in_array($manual['name'], $saved)) echo "hidden" ?>" onclick="toggleSaved(this.parentElement)">
 									<img src="generalIcons/filledSavedIcon.png" alt="" class = "w-6 h-6 <?php if(!in_array($manual['name'], $saved)) echo "hidden" ?>" onclick="toggleSaved(this.parentElement)">
@@ -76,6 +76,9 @@
 				</div>
 			</div>
 		</div>
+		<?php if($admin): ?>
+			<a href = "addManual.php" class = "flex justify-center items-center fixed bottom-1/12 right-6 md:right-14 w-8 h-8 text-lg sm:w-10 sm:h-10 sm:text-2xl md:w-12 md:h-12 md:text-3xl font-bold text-white bg-primaryColor rounded-full shadow-md shadow-black/40">+</a>
+		<?php endif ?>	
     </body>
 	
 	<?php include 'includes/footer.php' ?>
