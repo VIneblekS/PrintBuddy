@@ -48,8 +48,8 @@
 					</div>
 				<?php endforeach ?>
 				<?php if($admin): ?>
-					<a href = "addCourse.php" class = "flex justify-center items-center absolute -bottom-4 translate-y-full right-full md:right-0 w-8 h-8 text-lg sm:w-10 sm:h-10 sm:text-2xl md:w-12 md:h-12 md:text-3xl font-bold text-white bg-primaryColor rounded-full shadow-md shadow-black/40">+</a>
-				<?php endif ?>	
+					<a href = "addCourse.php" class = "flex justify-center items-center absolute -bottom-4 translate-y-full -left-3 md:left-full w-8 h-8 text-lg sm:w-10 sm:h-10 sm:text-2xl md:w-12 md:h-12 md:text-3xl font-bold text-white bg-primaryColor rounded-full shadow-md shadow-black/40">+</a>
+				<?php endif ?>		
 			</div>
 		</div>
 		<div id = "popUp" class = "fixed top-0 left-0 w-full h-full backdrop-blur-sm bg-primaryColor bg-opacity-10 flex justify-center items-center hidden">

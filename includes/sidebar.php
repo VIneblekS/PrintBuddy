@@ -31,7 +31,7 @@
 				<p>Acasă</p>
 			</a>
 			<div class = "h-px w-64 bg-primaryColor/40"></div>
-			<a href="courses.php" class = "h-14 w-64 flex items-center gap-3.5 text-primaryColor">
+			<a href="availableCourses.php" class = "h-14 w-64 flex items-center gap-3.5 text-primaryColor">
 				<img src="generalIcons/coursesIcon.png" alt="" class = "h-9 w-9">
 				<p>Cursuri</p>
 			</a>
