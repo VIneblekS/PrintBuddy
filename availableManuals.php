@@ -58,13 +58,13 @@
 								<?php endif ?>
 							</div>
 							<?php if($admin): ?>
-								<img id="<?php echo $manual['id']?>" src="generalIcons/discardIcon.png" alt="" class = "w-3 h-3 absolute right-4 top-4" onclick="togglePopUp(this.id)">
+								<img id="<?php echo $manual['id']?>" src="generalIcons/discardIcon.png" alt="" class = "hidden md:block w-3 h-3 absolute right-4 top-4" onclick="togglePopUp(this.id)">
 							<?php endif ?>
 						</div>
 					</div>
 				<?php endforeach ?>
 				<?php if($admin): ?>
-					<a href = "addManual.php" class = "flex justify-center items-center absolute -bottom-4 translate-y-full -left-3 md:left-full w-8 h-8 text-lg sm:w-10 sm:h-10 sm:text-2xl md:w-12 md:h-12 md:text-3xl font-bold text-white bg-primaryColor rounded-full shadow-md shadow-black/40">+</a>
+					<a href = "addManual.php" class = "hidden md:flex justify-center items-center absolute -bottom-4 translate-y-full -left-3 md:left-full w-8 h-8 text-lg sm:w-10 sm:h-10 sm:text-2xl md:w-12 md:h-12 md:text-3xl font-bold text-white bg-primaryColor rounded-full shadow-md shadow-black/40">+</a>
 				<?php endif ?>	
 			</div>
 		</div>
