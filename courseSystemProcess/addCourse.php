@@ -7,7 +7,13 @@
     $description = $_POST['courseDescription'];
     $author = $_SESSION['username'];
     //
-    $sql = "INSERT INTO courses (title, description, author) VALUES ('$title', '$description', '$author')";
+    $_FILES['previewImage']['name'] = 'previewImage_'.strtolower(str_replace(' ', '_', $title));
+    $imageName = $_FILES['previewImage']['name'];
+    $imgTmpName = $_FILES['previewImage']['tmp_name'];
+    
+    move_uploaded_file($imgTmpName, $_SERVER['DOCUMENT_ROOT'].'/courses/uploads/'.$imageName);
+    //
+    $sql = "INSERT INTO courses (title, description, image, author) VALUES ('$title', '$description', '$imageName', '$author')";
     mysqli_query($conn['main'], $sql);
     $courseId = mysqli_insert_id($conn['main']); 
     //

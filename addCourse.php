@@ -28,6 +28,18 @@
 				<textarea type="text" id="descriptionInput" class = "resize-none h-24 w-70 sm:w-86 md:w-105 lg:w-120 text-sm pl-8 pr-4 outline-none"></textarea>
 				<h1 class = "absolute text-xs bg-white px-2.5 -top-2 left-3">Descriere</h1>
 			</div>
+			<div class = "w-80 sm:w-105 md:w-120 lg:w-135 flex flex-col gap-6 justify-center items-center py-8 shadow-lg rounded-xl border border-primaryColor">
+                    <div class = "w-280px sm:w-88 md:w-105 lg:w-120">	
+                        <h1 class = "text-base text-primaryColor font-bold">Imagine descriptivă</h1>
+                    </div>
+                    <label onclick = "imagePreview(this)">
+                        <input type="file" id="previewImageInput" class="hidden">
+                        <div class = "w-54 h-54 sm:h-60 sm:w-60 md:w-67 md:h-67 lg:w-88 lg:h-88 flex justify-center items-center border border-dashed border-placeholderGray">
+                            <p class = "text-xs text-placeholderGray">Încarcă o imagine!</p>
+                            <img src="" alt="" class = "w-54 h-54 sm:h-60 sm:w-60 md:w-67 md:h-67 lg:w-88 lg:h-88 hidden">
+                        </div>
+                    </label>
+                </div>
 			<div id="error" class = "w-72 sm:w-88 md:w-105 lg:w-120 flex items-center gap-2 hidden">
 				<img src="generalIcons/errorIcon.png" alt="" class = "w-7 h-7 md:w-8 md:h-8">
 				<p class = "text-black text-xs md:text-sm">Toate câmpurile trebuiesc completate!</p>

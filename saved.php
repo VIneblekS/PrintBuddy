@@ -10,8 +10,7 @@
 
 	session_start();
 
-	if(checkIfConnected())
-		$username = $_SESSION['username'];
+	$username = $_SESSION['username'];
 
     $sql = "SELECT m.* FROM manuals m INNER JOIN saves s ON m.name = s.printerName WHERE s.username = '$username'";
 	$manuals = mysqli_query($conn['main'], $sql);

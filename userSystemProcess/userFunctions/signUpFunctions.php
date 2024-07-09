@@ -45,7 +45,7 @@
             $credentials['email'] = filter_var($credentials['email'], FILTER_SANITIZE_EMAIL);
             list($user, $domain) = (strpos($credentials['email'], '@')) ? explode('@', $credentials['email']) : null;
             //
-            if(empty($domain) || !preg_match("/^[a-zA-Z0-9_.-]+$/", $user))
+            if(empty($domain) || !checkdnsrr($domain) || !preg_match("/^[a-zA-Z0-9_.-]+$/", $user))
                 $errors['emailErr'] = 'Acest email este invalid.';
             elseif (check_emailExists($conn, $credentials))
                 $errors['emailErr'] = 'Acest email este deja folosit.';
@@ -104,6 +104,31 @@
                 $errors['passwordErr'] = $errors['passwordConfirmErr'] = 'Parolele nu se potrivesc.';
             else
                 $credentials['password'] = password_hash($credentials['password'], PASSWORD_DEFAULT);
+    }
+
+    function check_newPassword($conn, $username, &$credentials, &$errors) {
+        if(empty($_POST['password']) || trim($_POST['password']) == '')
+            $errors['passwordErr'] = 'Acest câmp este obligatoriu.';
+        else {
+            $credentials['password'] = filter_var($_POST['password'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            //
+            if(strlen($credentials['password']) < 8)
+                $errors['passwordErr'] = 'Parola trebuie să conțină minim 8 caractere.';
+            elseif(preg_match("/^[a-zA-z0-9]+$/", $credentials['password']))
+                $errors['passwordErr'] = 'Parola trebuie să conțină cel puțin un caracter special.';
+            elseif(strpos($credentials['password'], ' ') != FALSE)
+                $errors['passwordErr'] = 'Spațiile nu sunt permise în parolă.';    
+        }
+        //
+        $sql = "SELECT * FROM users WHERE username = '$username'";
+        $userInfo = mysqli_query($conn['main'], $sql);
+        $userInfo = mysqli_fetch_assoc($userInfo);
+        //
+        if(empty($errors['passwordErr']))
+            if (!password_verify($credentials['password'], $userInfo['password']))
+                $credentials['password'] = password_hash($credentials['password'], PASSWORD_DEFAULT);
+            else
+                $errors['passwordErr'] = 'Paeola nouă nu poate fi identică cu cea actuală.';
     }
 
     function checkDeviceIdExists($conn, $id) {

@@ -1,6 +1,7 @@
 const submitButton = document.querySelector('#submit');
 const titleInput = document.querySelector('#titleInput');
 const descriptionInput = document.querySelector('#descriptionInput');
+const previewImageInput = document.querySelector('#previewImageInput');
 const formError = document.querySelector('#error');
 var courseId = null;
 
@@ -60,9 +61,7 @@ function createNewCourse() {
         let formData = new FormData();
         formData.append('courseTitle', titleInput.value);
         formData.append('courseDescription', descriptionInput.value);
-
-        console.log("Form Data being sent:", Array.from(formData.entries())); // Debugging line
-
+        formData.append('previewImage', previewImageInput.files[0]);
 
         var xhr = new XMLHttpRequest();
        
@@ -71,6 +70,9 @@ function createNewCourse() {
 
         xhr.onload = function() {
             if (xhr.status == 200) {
+                
+                console.log(this.responseText);
+
                 courseId = JSON.parse(this.responseText);
                 resolve(courseId);
             }

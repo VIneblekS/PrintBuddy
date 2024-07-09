@@ -21,7 +21,7 @@
             if (isset($deviceId))
             
                 // Update the access token and session id
-                updateAccessToken($conn, $deviceId);
+                updateAccessToken($conn, $deviceId, $refreshFrequency);
 
         // Store the session data
         storeSessionData($conn);

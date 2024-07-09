@@ -17,14 +17,14 @@
         setcookie($name, $value, $expire, '/', $_SERVER['HTTP_HOST'], true, true);
     }
 
-    function updateAccessToken($conn, $deviceId) {
+    function updateAccessToken($conn, $deviceId, $refreshFrequency) {
         session_regenerate_id(true);
         $currentId = session_id();
         //
         $sql = "UPDATE tokens SET token = '$currentId' WHERE deviceId = '$deviceId'";
         mysqli_query($conn['main'], $sql);
         //
-        setSecureCookie('accessToken', $currentId, null);
+        setSecureCookie('accessToken', $currentId, time()+$refreshFrequency);
         //
         $_SESSION['lastRegeneration'] = time();
     }
@@ -37,6 +37,9 @@
 		$resultData = mysqli_fetch_assoc($resultData);
         //
         $_SESSION['username'] = $resultData['username'];
+        $_SESSION['firstName'] = $resultData['firstName'];
+        $_SESSION['lastName'] = $resultData['lastName'];
+        $_SESSION['email'] = $resultData['email'];
         $_SESSION['admin'] = $resultData['admin'];
     }
 

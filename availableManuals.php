@@ -2,6 +2,10 @@
 	include 'databases/databases.php';
 	include 'generalFunctions/generalFunctions.php';
 
+	$sql = "SELECT * FROM manuals";
+	$manuals = mysqli_query($conn['main'], $sql);
+	$manuals = mysqli_fetch_all($manuals, MYSQLI_ASSOC);
+
 	$admin = 0;
 
 	if(isset($_COOKIE['refreshToken']) && !isset($_COOKIE['accessToken']))
@@ -12,20 +16,15 @@
 	if(checkIfConnected()) {
 		$admin = $_SESSION['admin'];
 		$username = $_SESSION['username'];
+		$sql = "SELECT * FROM saves WHERE username = '$username'";
+		$saves = mysqli_query($conn['main'], $sql);
+		$saves = mysqli_fetch_all($saves, MYSQLI_ASSOC);
+
+		$saved = [];
+
+		foreach($saves as $save)
+			$saved[] = $save['printerName'];
 	}
-
-	$sql = "SELECT * FROM manuals";
-	$manuals = mysqli_query($conn['main'], $sql);
-	$manuals = mysqli_fetch_all($manuals, MYSQLI_ASSOC);
-
-	$sql = "SELECT * FROM saves WHERE username = '$username'";
-	$saves = mysqli_query($conn['main'], $sql);
-	$saves = mysqli_fetch_all($saves, MYSQLI_ASSOC);
-
-	$saved = [];
-
-	foreach($saves as $save)
-		$saved[] = $save['printerName'];
 
 ?>
 
