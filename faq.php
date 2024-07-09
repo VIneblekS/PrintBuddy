@@ -35,7 +35,7 @@
 	<body class = "mt-12 pt-12 md:pt-28 flex flex-col items-center">
 		<div class = "flex flex-col gap-8 md:gap-16 w-82 sm:w-2/3">	
 			<h1 class = "font-bold text-2.5xl md:text-4xl text-primaryColor">Întrebări frecvente</h1>
-			<div class = "flex flex-col gap-7">
+			<div class = "relative flex flex-col gap-7">
 				<?php foreach($faqs as $faq): ?>
 					<div id="<?php echo $faq['id']?>" class = "flex flex-col gap-7">
 						<div class = "flex flex-col gap-7">
@@ -53,6 +53,9 @@
 						<?php endif ?>
 					</div>
 				<?php endforeach ?>
+				<?php if($admin): ?>
+					<a href = "addFAQ.php" class = "flex justify-center items-center absolute -bottom-4 translate-y-full right-full md:-right-20 w-8 h-8 text-lg sm:w-10 sm:h-10 sm:text-2xl md:w-12 md:h-12 md:text-3xl font-bold text-white bg-primaryColor rounded-full shadow-md shadow-black/40">+</a>
+				<?php endif ?>	
 			</div>
 		</div>
 		<div id = "popUp" class = "fixed top-0 left-0 w-full h-full backdrop-blur-sm bg-primaryColor bg-opacity-10 flex justify-center items-center hidden">
@@ -66,9 +69,6 @@
 				</div>
 			</div>
 		</div>
-		<?php if($admin): ?>
-			<a href = "addFAQ.php" class = "flex justify-center items-center fixed bottom-1/12 right-6 md:right-14 w-8 h-8 text-lg sm:w-10 sm:h-10 sm:text-2xl md:w-12 md:h-12 md:text-3xl font-bold text-white bg-primaryColor rounded-full shadow-md shadow-black/40">+</a>
-		<?php endif ?>	
 	</body>
 
 	<?php include 'includes/footer.php' ?>
@@ -76,4 +76,5 @@
 
 <script src = "javascript/deleteFAQ.js"></script>
 <script src = "javascript/showAnswer.js"></script>
-
+<script src="https://cdn.botpress.cloud/webchat/v2/inject.js"></script>
+<script src="https://mediafiles.botpress.cloud/48385c87-3c59-40fe-b72c-ff429e635db2/webchat/v2/config.js"></script>

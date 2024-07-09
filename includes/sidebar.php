@@ -36,7 +36,7 @@
 				<p>Cursuri</p>
 			</a>
 			<div class = "h-px w-64 bg-primaryColor/40"></div>
-			<a href="manuals.php" class = "h-14 w-64 flex items-center gap-3.5 text-primaryColor">
+			<a href="availableManuals.php" class = "h-14 w-64 flex items-center gap-3.5 text-primaryColor">
 				<img src="generalIcons/manualsIcon.png" alt="" class = "h-9 w-9">
 				<p>Manuale</p>
 			</a>
@@ -50,11 +50,6 @@
 		<a href = "https://discord.gg/uMADwGmThs" target = "_blank" class = "h-14 w-64 flex items-center gap-3.5 text-primaryColor">
 			<img src="generalIcons/communityIcon.png" alt="" class = "h-9 w-9">
 			<p>Comunitate</p>
-		</a>
-		<div class = "h-px w-64 bg-primaryColor/40"></div>
-		<a href="help.php" class = "h-14 w-64 flex items-center gap-3.5 text-primaryColor">
-			<img src="generalIcons/helpIcon.png" alt="" class = "h-9 w-9">
-			<p>Ajutor</p>
 		</a>
         <?php if(checkIfConnected()):?>
             <div class = "h-px w-64 bg-primaryColor/40"></div>
