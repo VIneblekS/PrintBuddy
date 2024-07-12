@@ -9,10 +9,12 @@
 						<?php 
 							if(isset($_COOKIE['refreshToken']) && !isset($_COOKIE['accessToken']))
 								echo '<script src = "sessions/session.js"></script>';
+							else {
+								if (session_status() !== 2)
+									session_start();
 
-							if (session_status() !== 2)
-								session_start();
-							echo $_SESSION['username'];
+								echo $_SESSION['username'];
+							}
 						?>
 					</p>
                 </a>

@@ -13,10 +13,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="https://cdn.tailwindcss.com"></script>
 		<script src="javascript/tailwindAddOns.js"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="css/customClases.css">
 		<title>Printbuddy</title>
 	</head>
-	<body class = "flex flex-col gap-5 sm:gap-6 pb-24">
+
+	<body class = "h-full flex flex-col gap-5 sm:gap-6 pb-24">
 		<img src="generalIcons/returnIcon.png" alt="" class = "h-7 w-7 mt-6 ml-3 sm:ml-6 md:mt-10 md:ml-12" onclick = "returnToLastPage()">
 		<div class = "flex flex-col justify-center items-center gap-8 sm:gap-10">
 			<h1 class = "font-bold text-2.5xl sm:text-3xl text-primaryColor">Înregistrare</h1>
@@ -47,7 +49,7 @@
 						<p id = "passwordConfirmErr" class = "h-4 text-sm text-red-600"></p>
 					</div>
 				</div>
-				<input type="submit" name="signUp" value="Crează cont" class = "w-32 h-9 items-center flex justify-center text-sm bg-primaryColor rounded-lg font-normal text-white shadow-md shadow-black/40">
+				<input type="submit" name="signUp" value="Crează cont" class = "w-36 h-10 items-center flex justify-center text-sm bg-primaryColor rounded-lg font-normal text-white shadow-md shadow-black/40">
 			</form>
 			<div class = "h-px w-56 bg-primaryColor"></div>
 			<div class = "flex justify-center gap-1">

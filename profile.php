@@ -13,11 +13,12 @@
 
 <!DOCTYPE html>
 <html>
-	<head>
+    <head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="https://cdn.tailwindcss.com"></script>
 		<script src="javascript/tailwindAddOns.js"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="css/customClases.css">
 		<title>Printbuddy</title>
 	</head>
@@ -25,7 +26,7 @@
 	<?php include 'includes/navbar.php' ?>
 	<?php include 'includes/sidebar.php' ?>
 
-	<body class = "mt-12 pt-12 md:pt-18 pb-14 flex flex-col items-center">
+	<body class = "mt-12 pt-8 pb-14 flex flex-col items-center">
 		<div class = "flex flex-col items-center gap-7 md:gap-8 w-82 sm:w-2/3 md:w-full">	
 		    <div class = "flex flex-col gap-5 justify-center items-center">	
                 <h1 class = "font-bold text-2xl sm:text-2.5xl md:text-4xl text-primaryColor">Profilul meu</h1>
@@ -116,7 +117,7 @@
                         <p id="passwordConfirmErr" class = "h-4 text-sm text-red-600"></p>
                         <h1 class = "absolute text-xs bg-white px-2.5 -top-2 left-3">Parola actuală</h1>
                     </div>
-                    <input type="submit" value="Șterge contul" class = "w-28 h-8 md:w-30 md:h-9 items-center flex justify-center text-xs md:text-sm text-white bg-red-600 rounded-lg font-normal shadow-md shadow-black/20">
+                    <input type="submit" value="Șterge contul" class = "w-32 h-9 md:w-30 md:h-9 items-center flex justify-center text-xs md:text-sm text-white bg-red-600 rounded-lg font-normal shadow-md shadow-black/20">
                 </form>
             </div>
 		</div>

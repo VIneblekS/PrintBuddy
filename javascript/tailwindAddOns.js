@@ -5,6 +5,19 @@ tailwind.config = {
             md: '890px',
             lg: '1325px',
         },
+        fontSize: {
+            'xxs': '9px',
+            xs: '12.5px',
+            sm: '0.875rem',
+            base: '1rem',
+            lg: '18px',
+            xl: '1.25rem',
+            '2xl': '1.563rem',
+            '3xl': '1.953rem',
+            '4xl': '2.441rem',
+            '5xl': '3.052rem',
+            '6xl': '4rem',
+        },
         extend: {
             keyframes: {
                 'rotateTo-90': {
@@ -21,12 +34,14 @@ tailwind.config = {
             },
             dropShadow: {
                 'text': '0 4px 4px #1E1E1E',
+                'textLigth': '0 2px 3px #1E1E1E85',                
             },
             boxShadow: {
                 'left':	'-4px 0 4px #2D0F44',
             },
             lineHeight: {
                 '27px': '27px',
+                '11.5': '46px',
             },
             colors: {
                 primaryColor: '#853AC0',
@@ -89,9 +104,6 @@ tailwind.config = {
                 '275px': '275px',
                 '180px': '180px',
             },
-        },
-        fontFamily: {
-            'sans': ['Inter', 'sans-serif'],
         },
     }
 }

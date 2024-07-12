@@ -7,7 +7,7 @@
 		<a href="index.php">	
 			<div class = "flex justify-center items-center gap-3">
 				<img src="images&videoes/logoLightTheme.png" alt="" class = "w-9">		
-				<h1 class = "font-medium text-lg text-primaryColor font-sans">PRINTBUDDY</h1>
+				<h1 class = "font-semibold text-lg text-primaryColor">PRINTBUDDY</h1>
 			</div>
 		</a>
 		<div class = "hidden md:flex justify-center items-center gap-3.5">

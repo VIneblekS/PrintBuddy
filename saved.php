@@ -25,6 +25,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="https://cdn.tailwindcss.com"></script>
 		<script src="javascript/tailwindAddOns.js"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="css/customClases.css">
 		<title>Printbuddy</title>
 	</head>
@@ -32,7 +33,7 @@
 	<?php include 'includes/navbar.php' ?>
 	<?php include 'includes/sidebar.php' ?>
 
-	<body class = "mt-12 pt-12 md:pt-28 flex flex-col items-center">
+	<body class = "mt-12 pt-12 md:pt-16 pb-28 flex flex-col items-center">
 		<div class = "flex flex-col items-center gap-8 md:gap-16 w-82 sm:w-2/3 md:w-full">	
 			<h1 class = "font-bold text-2xl sm:text-2.5xl md:text-4xl text-primaryColor">Salvate</h1>
 			<div class = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 w-80.5 sm:w-108.5 md:w-177 lg:w-273.5">

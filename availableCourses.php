@@ -25,6 +25,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="https://cdn.tailwindcss.com"></script>
 		<script src="javascript/tailwindAddOns.js"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="css/customClases.css">
 		<title>Printbuddy</title>
 	</head>
@@ -48,7 +49,11 @@
 					</div>
 				<?php endforeach ?>
 				<?php if($admin): ?>
-					<a href = "addCourse.php" class = "hidden md:flex justify-center items-center absolute -bottom-4 translate-y-full md:left-full w-8 h-8 text-lg sm:w-10 sm:h-10 sm:text-2xl md:w-12 md:h-12 md:text-3xl font-bold text-white bg-primaryColor rounded-full shadow-md shadow-black/40">+</a>
+					<div class = "flex justify-center items-center">
+						<a href = "addCourse.php" class = "flex justify-center items-center w-52 h-52 rounded-xl border border-primaryColor text-6xl text-primaryColor">
+							+
+						</a>
+					</div>
 				<?php endif ?>		
 			</div>
 		</div>

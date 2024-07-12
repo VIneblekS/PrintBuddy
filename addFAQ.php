@@ -13,9 +13,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="https://cdn.tailwindcss.com"></script>
 		<script src="javascript/tailwindAddOns.js"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="css/customClases.css">
 		<title>Printbuddy</title>
 	</head>
+	
 	<body id = "body" class = "flex flex-col gap-5 sm:gap-6 pb-24">
 		<img src="generalIcons/returnIcon.png" alt="" class = "h-7 w-7 mt-6 ml-3 sm:ml-6 md:mt-10 md:ml-12" onclick = "returnToLastPage()">
 		<div class = "flex flex-col justify-center items-center gap-8 sm:gap-10">
@@ -34,7 +36,7 @@
 				<img src="generalIcons/errorIcon.png" alt="" class = "w-7 h-7 md:w-8 md:h-8">
 				<p class = "text-black text-xs md:text-sm">Toate câmpurile trebuiesc completate!</p>
 			</div>
-			<button id="submit" class = "w-32 h-9 items-center flex justify-center text-xs sm:text-sm sm:w-36 sm:h-10 bg-primaryColor/80 rounded-lg font-normal text-white shadow-md shadow-black/30">Adaugă întrbarea</button>
+			<button id="submit" class = "w-40 h-10 items-center flex justify-center text-sm bg-primaryColor rounded-lg font-normal text-white shadow-md shadow-black/40">Adaugă întrbarea</button>
 		</div>
     </body>
 	<script src="javascript/return.js"></script>
