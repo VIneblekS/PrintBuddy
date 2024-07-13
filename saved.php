@@ -7,15 +7,15 @@
 
     if(isset($_COOKIE['refreshToken']) && !isset($_COOKIE['accessToken']))
 		echo '<script src = "sessions/session.js"></script>';
+	else {
+		session_start();
 
-	session_start();
+		$username = $_SESSION['username'];
 
-	$username = $_SESSION['username'];
-
-    $sql = "SELECT m.* FROM manuals m INNER JOIN saves s ON m.name = s.printerName WHERE s.username = '$username'";
-	$manuals = mysqli_query($conn['main'], $sql);
-	$manuals = mysqli_fetch_all($manuals, MYSQLI_ASSOC);
-
+		$sql = "SELECT m.* FROM manuals m INNER JOIN saves s ON m.name = s.printerName WHERE s.username = '$username'";
+		$manuals = mysqli_query($conn['main'], $sql);
+		$manuals = mysqli_fetch_all($manuals, MYSQLI_ASSOC);
+	}
 ?>
 
 <!DOCTYPE html>

@@ -7,6 +7,12 @@
         $description = $_POST['description'];
         $author = $_SESSION['username'];
         $video = $_POST['video'];
+
+        if(strpos($video, 'youtu.be/') !== FALSE)
+            $video = str_replace('youtu.be', 'youtube.com/embed', $video);
+        else
+            $video = str_replace('watch?v=', 'embed/', $video);
+        
         //
         $_FILES['image']['name'] = str_replace(' ', '_', $name).'Image';
         $imageName = $_FILES['image']['name'];

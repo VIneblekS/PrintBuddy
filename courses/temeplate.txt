@@ -66,7 +66,7 @@
                         <?php endfor ?>
                     <?php break ?>
                     <?php case "video": ?>
-                        <iframe class = "w-82 sm:w-105 h-50 sm:h-60 md:w-150 md:h-84" src="<?php $sectionData[0]['content']?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe class = "w-82 sm:w-105 h-50 sm:h-60 md:w-150 md:h-84" src="<?php echo $sectionData[0]['content']?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     <?php break ?>
                 <?php endswitch ?>
             <?php endforeach ?>

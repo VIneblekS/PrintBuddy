@@ -97,7 +97,14 @@
     }
 
     function insertVideoContent($conn, $sectionId) {
-        $textContent = $_POST['video'];
+        $video = $_POST['video'];
+
+        if(strpos($video, 'youtu.be/') !== FALSE)
+            $video = str_replace('youtu.be', 'youtube.com/embed', $video);
+        else
+            $video = str_replace('watch?v=', 'embed/', $video);
+
+        $textContent = $video;
         $contentType = 'video';
         //
         $sql = "INSERT INTO section_content (sectionId, contentType, content) VALUES ('$sectionId', '$contentType', '$textContent')";
