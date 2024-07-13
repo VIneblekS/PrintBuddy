@@ -17,7 +17,7 @@ function deleteCourse() {
 
     var xhr = new XMLHttpRequest();
 
-    xhr.open('POST', 'courseSystemProcess/deleteCourse.php', true);
+    xhr.open('POST', 'courseSystemProcess/deleteCourse', true);
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
     xhr.onload = function() {
@@ -42,7 +42,7 @@ function deleteFAQ() {
 
     var xhr = new XMLHttpRequest();
 
-    xhr.open('POST', 'faqSystemProcess/deleteFAQ.php', true);
+    xhr.open('POST', 'faqSystemProcess/deleteFAQ', true);
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
     xhr.onload = function() {
@@ -67,7 +67,7 @@ function deleteManual() {
 
     var xhr = new XMLHttpRequest();
 
-    xhr.open('POST', 'manualsSystemProcess/deleteManual.php', true);
+    xhr.open('POST', 'manualsSystemProcess/deleteManual', true);
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
     xhr.onload = function() {

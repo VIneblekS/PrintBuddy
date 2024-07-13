@@ -1,13 +1,19 @@
+RewriteEngine On
+
+# Redirect .php URLs to clean URLs
+RewriteCond %{THE_REQUEST} \.php [NC]
+RewriteRule ^(.+)\.php$ /$1 [R=301,L]
+
+# Internal rewrite to .php files
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php [L]
+
 # Deny access if not an AJAX request from specific processes
 <IfModule mod_rewrite.c>
     RewriteCond %{REQUEST_URI} ^/(user|courses|manuals|faq|save)SystemProcess/ [NC]
     RewriteCond %{HTTP:X-Requested-With} !^XMLHttpRequest$ [NC]
     RewriteRule ^ - [F]
 </IfModule>
-
-# Force URLs to include .php extension
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*[^/])$ /$1.php [L]
 
 # Redirect /index to root URL
 RewriteRule ^index$ / [R=301,L]

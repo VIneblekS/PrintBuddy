@@ -27,7 +27,7 @@ function addManual() {
     
         var xhr = new XMLHttpRequest();
 
-        xhr.open('POST', 'manualsSystemProcess/addManual.php', true);
+        xhr.open('POST', 'manualsSystemProcess/addManual', true);
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
         xhr.onload = function() {

@@ -41,7 +41,7 @@ function sendData(courseId, forms) {
                 
                 var xhr = new XMLHttpRequest();
                 
-                xhr.open('POST', 'courseSystemProcess/addSection.php', true);
+                xhr.open('POST', 'courseSystemProcess/addSection', true);
                 xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
                 xhr.onload = function() {
@@ -72,7 +72,7 @@ function createNewCourse() {
 
         var xhr = new XMLHttpRequest();
        
-        xhr.open('POST', 'courseSystemProcess/addCourse.php', true);
+        xhr.open('POST', 'courseSystemProcess/addCourse', true);
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
         xhr.onload = function() {

@@ -27,7 +27,7 @@ function addFAQ() {
     
         var xhr = new XMLHttpRequest();
 
-        xhr.open('POST', 'faqSystemProcess/addFAQ.php', true);
+        xhr.open('POST', 'faqSystemProcess/addFAQ', true);
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
         xhr.onload = function() {

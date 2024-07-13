@@ -6,7 +6,7 @@ function toggleSaved(element) {
     
     var xhr = new XMLHttpRequest();
 
-    xhr.open('POST', 'saveSystemProcess/toggleSave.php', true);
+    xhr.open('POST', 'saveSystemProcess/toggleSave', true);
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
     xhr.onload = function() {
@@ -31,7 +31,7 @@ function unSave(element) {
     
     var xhr = new XMLHttpRequest();
 
-    xhr.open('POST', 'saveSystemProcess/toggleSave.php', true);
+    xhr.open('POST', 'saveSystemProcess/toggleSave', true);
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
     xhr.onload = function() {

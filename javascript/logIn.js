@@ -15,7 +15,7 @@ function logIn(event) {
 
     var xhr = new XMLHttpRequest();
 
-    xhr.open('POST', 'userSystemProcess/logIn.php', true);
+    xhr.open('POST', 'userSystemProcess/logIn', true);
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
     xhr.onload = function() {

@@ -15,7 +15,7 @@ function signUp(event) {
 
     var xhr = new XMLHttpRequest();
 
-    xhr.open('POST', 'userSystemProcess/signUp.php', true);
+    xhr.open('POST', 'userSystemProcess/signUp', true);
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
     xhr.onload = function() {

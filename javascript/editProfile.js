@@ -29,7 +29,7 @@ function changeLastName(event) {
 
     var xhr = new XMLHttpRequest();
 
-    xhr.open('POST', 'userSystemProcess/changeLastName.php', true);
+    xhr.open('POST', 'userSystemProcess/changeLastName', true);
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
     xhr.onload = function() {
@@ -62,7 +62,7 @@ function changeFirstName(event) {
 
     var xhr = new XMLHttpRequest();
 
-    xhr.open('POST', 'userSystemProcess/changeFirstName.php', true);
+    xhr.open('POST', 'userSystemProcess/changeFirstName', true);
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
     xhr.onload = function() {
@@ -95,7 +95,7 @@ function changeEmail(event) {
 
     var xhr = new XMLHttpRequest();
 
-    xhr.open('POST', 'userSystemProcess/changeEmail.php', true);
+    xhr.open('POST', 'userSystemProcess/changeEmail', true);
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
     xhr.onload = function() {
@@ -128,7 +128,7 @@ function changePassword(event) {
 
     var xhr = new XMLHttpRequest();
 
-    xhr.open('POST', 'userSystemProcess/changePassword.php', true);
+    xhr.open('POST', 'userSystemProcess/changePassword', true);
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
     xhr.onload = function() {
@@ -161,7 +161,7 @@ function deleteAccount(event) {
 
     var xhr = new XMLHttpRequest();
 
-    xhr.open('POST', 'userSystemProcess/deleteAccount.php', true);
+    xhr.open('POST', 'userSystemProcess/deleteAccount', true);
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
     xhr.onload = function() {
