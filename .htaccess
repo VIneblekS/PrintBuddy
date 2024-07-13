@@ -37,6 +37,32 @@
     RewriteRule ^ - [F]
 </IfModule>
 
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Check if the request is coming from courseSystemProcess
+    RewriteCond %{REQUEST_URI} ^/faqSystemProcess/ [NC]
+
+    # If so, check if it's an AJAX request
+    RewriteCond %{HTTP:X-Requested-With} !^XMLHttpRequest$ [NC]
+
+    # Deny access if it's not an AJAX request from courseSystemProcess
+    RewriteRule ^ - [F]
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Check if the request is coming from courseSystemProcess
+    RewriteCond %{REQUEST_URI} ^/saveSystemProcess/ [NC]
+
+    # If so, check if it's an AJAX request
+    RewriteCond %{HTTP:X-Requested-With} !^XMLHttpRequest$ [NC]
+
+    # Deny access if it's not an AJAX request from courseSystemProcess
+    RewriteRule ^ - [F]
+</IfModule>
+
 RewriteEngine On 
 RewriteCond %{REQUEST_FILENAME} !-f 
 RewriteRule ^([^\.]+)$ $1.php [NC,L] 
