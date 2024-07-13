@@ -2,14 +2,13 @@ const popUp = document.querySelector('#popUp');
 const deleteButton = document.querySelector('#deleteButton');
 
 function togglePopUp(id) {
-
     if(id != null)
         deleteButton.id = id;
 
     popUp.classList.toggle('hidden');
 }
 
-function deleteFAQ() {
+function deleteCourse() {
     
     // Append the needed data to a new object
     var formData = new FormData();
@@ -59,7 +58,7 @@ function deleteFAQ() {
 
 }
 
-function deleteFAQ() {
+function deleteManual() {
     
     // Append the needed data to a new object
     var formData = new FormData();
