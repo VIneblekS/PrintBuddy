@@ -42,7 +42,14 @@ function videoPreview(element) {
     videoInput.addEventListener('input', function() {
         
         // Update the elements
-        preview.src = videoInput.value;
+        var videoEmbedLink = videoInput.value;
+        
+        if(videoEmbedLink.search('youtu.be/') != -1)
+            videoEmbedLink = videoEmbedLink.replace('youtu.be', 'youtube.com/embed');
+        else
+            videoEmbedLink = videoEmbedLink.replace('watch?v=', 'embed/');
+        
+        preview.src = videoEmbedLink;
         uploadText.classList.add('hidden');
         preview.classList.remove('hidden');
         uploadContainer.classList.remove('border');

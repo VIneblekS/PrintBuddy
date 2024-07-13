@@ -6,7 +6,7 @@
 	<form id = "tripleImage" class = "flex flex-col gap-10" enctype="multipart/form-data">
 		<div>
 			<label onclick = "imagePreview(this)">
-				<input type="file" name="image1" class="hidden">
+				<input type="file" name="image1" class="hidden" accept="image/*">
 				<div class = "w-280px h-158px sm:h-50 sm:w-88 md:w-105 md:h-60 lg:w-120 lg:h-67 flex justify-center items-center border border-dashed border-placeholderGray">
 					<p class = "text-xs text-placeholderGray">Încarcă o imagine!</p>
 					<img src="" alt="" class = "w-280px h-158px sm:h-50 sm:w-88 md:w-105 md:h-60 lg:w-120 lg:h-67 hidden">
@@ -15,7 +15,7 @@
 		</div>
 		<div>
 			<label onclick = "imagePreview(this)">
-				<input type="file" name="image2" class="hidden">
+				<input type="file" name="image2" class="hidden" accept="image/*">
 				<div class = "w-280px h-158px sm:h-50 sm:w-88 md:w-105 md:h-60 lg:w-120 lg:h-67 flex justify-center items-center border border-dashed border-placeholderGray">
 					<p class = "text-xs text-placeholderGray">Încarcă o imagine!</p>
 					<img src="" alt="" class = "w-280px h-158px sm:h-50 sm:w-88 md:w-105 md:h-60 lg:w-120 lg:h-67 hidden">
@@ -24,7 +24,7 @@
 		</div>
 		<div>
 			<label onclick = "imagePreview(this)">
-				<input type="file" name="image3" class="hidden">
+				<input type="file" name="image3" class="hidden" accept="image/*">
 				<div class = "w-280px h-158px sm:h-50 sm:w-88 md:w-105 md:h-60 lg:w-120 lg:h-67 flex justify-center items-center border border-dashed border-placeholderGray">
 					<p class = "text-xs text-placeholderGray">Încarcă o imagine!</p>
 					<img src="" alt="" class = "w-280px h-158px sm:h-50 sm:w-88 md:w-105 md:h-60 lg:w-120 lg:h-67 hidden">

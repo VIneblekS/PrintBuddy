@@ -36,8 +36,11 @@ function unSave(element) {
 
     xhr.onload = function() {
         if (this.status == 200) {
-
+            
             element.parentElement.remove();
+
+            if(JSON.parse(this.responseText) == null)
+                location.reload();
         }
     }
 

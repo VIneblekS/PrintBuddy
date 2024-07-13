@@ -22,7 +22,7 @@
 		<img src="generalIcons/returnIcon.png" alt="" class = "h-7 w-7 mt-6 ml-3 sm:ml-6 md:mt-10 md:ml-12" onclick = "returnToLastPage()">
 		<div class = "flex flex-col justify-center items-center gap-8 sm:gap-10">
 			<h1 class = "font-bold text-2.5xl text-primaryColor">Adaugă un manual</h1>
-			<form id = "addManualForm" class = "flex flex-col justify-center items-center gap-8 sm:gap-10">
+			<form id = "addManualForm" class = "flex flex-col justify-center items-center gap-8 sm:gap-10" enctype="multipart/form-data">
                 <div class = "relative">
                     <input type="text" name = "name" class = "h-14 sm:w-96 md:w-105 lg:w-120 w-72 text-sm shadow-lg rounded-xl pl-8 outline-none border border-primaryColor">
                     <h1 class = "absolute text-xs bg-white px-2.5 -top-2 left-3">Numele imprimantei</h1>
@@ -36,7 +36,7 @@
                         <h1 class = "text-base text-primaryColor font-bold">Imagine</h1>
                     </div>
                     <label onclick = "imagePreview(this)">
-                        <input type="file" name="image" class="hidden">
+                        <input type="file" name="image" class="hidden" accept="image/*">
                         <div class = "w-54 h-54 sm:h-60 sm:w-60 md:w-67 md:h-67 lg:w-88 lg:h-88 flex justify-center items-center border border-dashed border-placeholderGray">
                             <p class = "text-xs text-placeholderGray">Încarcă o imagine!</p>
                             <img src="" alt="" class = "w-54 h-54 sm:h-60 sm:w-60 md:w-67 md:h-67 lg:w-88 lg:h-88 hidden">
@@ -57,10 +57,10 @@
                 </div>
                 <div class = "w-80 sm:w-105 md:w-120 lg:w-135 flex flex-col gap-6 justify-center items-center py-8 shadow-lg rounded-xl border border-primaryColor">
                     <div class = "w-280px sm:w-88 md:w-105 lg:w-120">	
-                        <h1 class = "text-base text-primaryColor font-bold">Manual</h1>
+                        <h1 class = "text-base text-primaryColor font-bold">Manual de utilizare</h1>
                     </div>
                     <label onclick = "documentPreview(this)">
-                        <input type="file" name="document" class="hidden" id ="document">
+                        <input type="file" name="document" class="hidden" accept=".pdf">
                         <div class = "w-280px h-158px sm:h-50 sm:w-88 md:w-105 md:h-60 lg:w-120 lg:h-67 flex justify-center items-center border border-dashed border-placeholderGray">
                             <p class = "text-xs text-placeholderGray">Încarcă un document!</p>
                             <iframe class = "w-280px h-158px sm:h-50 sm:w-88 hidden md:w-105 md:h-60 lg:w-120 lg:h-67" src=""></iframe>
