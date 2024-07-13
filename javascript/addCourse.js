@@ -8,7 +8,7 @@ var courseId = null;
 submitButton.addEventListener('click', storeTheData);
 
 function redirect() {
-    window.location.href = 'index.php';
+    window.location.href = 'availableCourses.php';
 }
 
 function validateForms(forms) {

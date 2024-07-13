@@ -1,75 +1,13 @@
+# Deny access if not an AJAX request from specific processes
 <IfModule mod_rewrite.c>
-    RewriteEngine On
-
-    # Check if the request is coming from userSystemProcess
-    RewriteCond %{REQUEST_URI} ^/userSystemProcess/ [NC]
-
-    # If so, check if it's an AJAX request
+    RewriteCond %{REQUEST_URI} ^/(user|courses|manuals|faq|save)SystemProcess/ [NC]
     RewriteCond %{HTTP:X-Requested-With} !^XMLHttpRequest$ [NC]
-
-    # Deny access if it's not an AJAX request from userSystemProcess
     RewriteRule ^ - [F]
 </IfModule>
 
-<IfModule mod_rewrite.c>
-    RewriteEngine On
+# Force URLs to include .php extension
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*[^/])$ /$1.php [L]
 
-    # Check if the request is coming from courseSystemProcess
-    RewriteCond %{REQUEST_URI} ^/coursesSystemProcess/ [NC]
-
-    # If so, check if it's an AJAX request
-    RewriteCond %{HTTP:X-Requested-With} !^XMLHttpRequest$ [NC]
-
-    # Deny access if it's not an AJAX request from courseSystemProcess
-    RewriteRule ^ - [F]
-</IfModule>
-
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-
-    # Check if the request is coming from courseSystemProcess
-    RewriteCond %{REQUEST_URI} ^/manualsSystemProcess/ [NC]
-
-    # If so, check if it's an AJAX request
-    RewriteCond %{HTTP:X-Requested-With} !^XMLHttpRequest$ [NC]
-
-    # Deny access if it's not an AJAX request from courseSystemProcess
-    RewriteRule ^ - [F]
-</IfModule>
-
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-
-    # Check if the request is coming from courseSystemProcess
-    RewriteCond %{REQUEST_URI} ^/faqSystemProcess/ [NC]
-
-    # If so, check if it's an AJAX request
-    RewriteCond %{HTTP:X-Requested-With} !^XMLHttpRequest$ [NC]
-
-    # Deny access if it's not an AJAX request from courseSystemProcess
-    RewriteRule ^ - [F]
-</IfModule>
-
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-
-    # Check if the request is coming from courseSystemProcess
-    RewriteCond %{REQUEST_URI} ^/saveSystemProcess/ [NC]
-
-    # If so, check if it's an AJAX request
-    RewriteCond %{HTTP:X-Requested-With} !^XMLHttpRequest$ [NC]
-
-    # Deny access if it's not an AJAX request from courseSystemProcess
-    RewriteRule ^ - [F]
-</IfModule>
-
-RewriteEngine On
-
-# Redirect .php URLs to clean URLs
-RewriteCond %{THE_REQUEST} \.php [NC]
-RewriteRule ^(.+)\.php$ /$1 [R=301,L]
-
-# Remove .php extension
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.php -f
-RewriteRule ^(.*)$ $1.php [L]
+# Redirect /index to root URL
+RewriteRule ^index$ / [R=301,L]

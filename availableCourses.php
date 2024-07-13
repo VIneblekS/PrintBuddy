@@ -33,7 +33,7 @@
 	<?php include 'includes/navbar.php' ?>
 	<?php include 'includes/sidebar.php' ?>
 
-	<body class = "mt-12 pt-12 md:pt-28 flex flex-col items-center">
+	<body class = "mt-12 pt-12 md:pt-16 flex flex-col items-center">
 		<div class = "flex flex-col items-center gap-8 md:gap-16 w-82 sm:w-2/3 md:w-full">	
 			<h1 class = "font-bold text-2xl sm:text-2.5xl md:text-4xl text-primaryColor">Cursuri disponibile</h1>
 			<div class = "relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 w-80.5 sm:w-108.5 md:w-177 lg:w-273.5">

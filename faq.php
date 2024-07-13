@@ -33,7 +33,7 @@
 	<?php include 'includes/navbar.php' ?>
 	<?php include 'includes/sidebar.php' ?>
 
-	<body class = "mt-12 pt-12 md:pt-28 flex flex-col items-center">
+	<body class = "mt-12 pt-12 md:pt-20 flex flex-col items-center">
 		<div class = "flex flex-col gap-8 md:gap-16 w-82 sm:w-2/3">	
 			<h1 class = "font-bold text-2.5xl md:text-4xl text-primaryColor">Întrebări frecvente</h1>
 			<div class = "flex flex-col gap-12">
