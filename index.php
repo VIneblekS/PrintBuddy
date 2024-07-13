@@ -93,7 +93,7 @@
 			<div class = "flex flex-col gap-7 sm:gap-9">
 				<h1 class = "font-bold text-2xl text-primaryColor font-sans sm:text-3xl leading-6">COMUNITATE</h1>	
 				<p class = "w-68 sm:w-80 md:w-105 text-xs sm:text-sm md:text-base">Comunitatea noastră oferă un spațiu sigur și interactiv unde utilizatorii pot împărtăși idei, sfaturi și experiențe. Indiferent dacă sunt experimentați sau începători, membri se pot conecta și pot colabora pentru a învăța și a împărtăși pasiunea pentru această tehnologie inovatoare.</p>
-				<a href = "https://discord.gg/uMADwGmThs" target = "_blank" class = "w-32 h-9 md:text-base md:w-40 md:h-10 items-center flex justify-center bg-primaryColor rounded-lg text-sm text-white">Alătură-te</a>
+				<a href = "https://discord.gg/36bhhQe3Nu" target = "_blank" class = "w-32 h-9 md:text-base md:w-40 md:h-10 items-center flex justify-center bg-primaryColor rounded-lg text-sm text-white">Alătură-te</a>
 			</div>
 		</section>
     </body>

@@ -49,7 +49,7 @@
 			</a>
 			<div class = "h-px w-64 bg-primaryColor/40"></div>
 		</div>
-		<a href = "https://discord.gg/uMADwGmThs" target = "_blank" class = "h-14 w-64 flex items-center gap-3.5 text-primaryColor">
+		<a href = "https://discord.gg/36bhhQe3Nu" target = "_blank" class = "h-14 w-64 flex items-center gap-3.5 text-primaryColor">
 			<img src="generalIcons/communityIcon.png" alt="" class = "h-9 w-9">
 			<p>Comunitate</p>
 		</a>

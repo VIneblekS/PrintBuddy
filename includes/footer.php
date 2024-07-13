@@ -6,7 +6,7 @@
 				<a href = "courses.php" class = "text-8px text-white sm:text-sx md:text-sm">Cursuri</a>
 				<a href = "manuals.php" class = "text-8px text-white sm:text-sx md:text-sm">Manuale</a>
 				<a href = "FAQ.php" class = "text-8px text-white sm:text-sx md:text-sm">FAQ</a>
-				<a href = "community.php" class = "text-8px text-white sm:text-sx md:text-sm">Comunitate</a>
+				<a href = "https://discord.gg/36bhhQe3Nu" target = "_blank" class = "text-8px text-white sm:text-sx md:text-sm">Comunitate</a>
 				<a href = "help.php" class = "text-8px text-white sm:text-sx md:text-sm">Asistență AI</a>
 			</div>
 			<div class = "flex flex-col gap-1 md:gap-1.5">
