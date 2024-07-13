@@ -3,7 +3,8 @@
 ---
 
 ## Descriere
-*Inserare descriere aici.*
+
+Printbuddy este site-ul perfect pentru pasionații de imprimare 3D. Aici poți găsi manuale pentru o gamă largă de imprimante 3D, cursuri pentru imprimare și design 3D, și o mulțime de informații utile precum FAQ-uri. Pe lângă toate acestea, Printbuddy îți oferă acces la o comunitate vibrantă pe Discord, unde poți discuta și împărtăși experiențe cu alți entuziaști.
 
 ---
 
@@ -25,6 +26,8 @@ Pentru a instala și rula Printbuddy pe mașina ta locală, urmează pașii de m
 ## Instrucțiuni de utilizare
 
 Printbuddy funcționează ca orice alt site web modern. Navigați prin pagini, utilizați funcționalitățile oferite și bucurați-vă de experiența de utilizare optimizată. Este proiectat pentru a fi intuitiv și ușor de folosit, asigurându-vă că puteți accesa toate funcțiile sale fără probleme.
+
+De asemenea, puteți accesa proiectul online la [printbuddy.ro](http://printbuddy.ro).
 
 ---
 
