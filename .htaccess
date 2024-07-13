@@ -63,6 +63,13 @@
     RewriteRule ^ - [F]
 </IfModule>
 
-RewriteEngine On 
-RewriteCond %{REQUEST_FILENAME} !-f 
-RewriteRule ^([^\.]+)$ $1.php [NC,L] 
+RewriteEngine On
+
+# Redirect .php URLs to clean URLs
+RewriteCond %{THE_REQUEST} \.php [NC]
+RewriteRule ^(.+)\.php$ /$1 [R=301,L]
+
+# Remove .php extension
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php [L]
