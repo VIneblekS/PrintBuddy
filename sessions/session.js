@@ -2,8 +2,10 @@ getDeviceId();
 
 function getDeviceId() {
 
+    // Get the device id
     var deviceId = localStorage.getItem('deviceId');
   
+    // Append the needed data to a new object
     var formData = new FormData();
     formData.append('deviceId', JSON.stringify(deviceId));
   
@@ -18,5 +20,6 @@ function getDeviceId() {
         }
     }
 
+    // Send the form data
 	xhr.send(formData);
 }

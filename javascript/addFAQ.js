@@ -22,7 +22,7 @@ function addFAQ() {
     if(validateForm(addFAQForm)) {
     
         // Append the needed data to the form one
-        var formData = new FormData(addFAQForm);
+        let formData = new FormData(addFAQForm);
         formData.append('addFAQ', true);
     
         var xhr = new XMLHttpRequest();
@@ -40,6 +40,8 @@ function addFAQ() {
         xhr.send(formData);
 
     } else {
+
+        // Show the error
         formError.classList.remove('hidden');
     }
 }

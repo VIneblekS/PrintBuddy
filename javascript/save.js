@@ -1,6 +1,6 @@
 function toggleSaved(element) {
 
-    // Append the needed data
+    // Append the needed data to a new object
     var formData = new FormData();
     formData.append('printerName', element.id);
     
@@ -25,7 +25,7 @@ function toggleSaved(element) {
 
 function unSave(element) {
 
-    // Append the needed data
+    // Append the needed data to a new object
     var formData = new FormData();
     formData.append('printerName', element.id);
     
@@ -37,8 +37,10 @@ function unSave(element) {
     xhr.onload = function() {
         if (this.status == 200) {
             
+            // Remove the save card
             element.parentElement.remove();
 
+            // If there are no more saves show the empty page
             if(JSON.parse(this.responseText) == null)
                 location.reload();
         }

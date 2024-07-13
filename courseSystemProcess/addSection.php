@@ -37,7 +37,6 @@
         case 'video':
             insertVideoContent($conn, $sectionId);
             break;
-
-        
+  
     }
 ?>

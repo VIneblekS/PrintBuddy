@@ -24,6 +24,8 @@ addSection.addEventListener('click', () => {
     fetch('coursesSections/'+newSectionTypeInput.value+'.php')
     .then(response => response.text())
     .then(section => {
+        
+        // Add the new section to the form
         const contentContainer = document.getElementById('error');
         contentContainer.insertAdjacentHTML('beforebegin', section);
 

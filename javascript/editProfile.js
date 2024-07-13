@@ -171,14 +171,12 @@ function deleteAccount(event) {
             var errors = JSON.parse(this.responseText);
 
             // Check for any errors
-            if (errors['errorCnt'] == 0) {
-
+            if (errors['errorCnt'] == 0)
                 location.reload();
-            } else {
+            else 
 
                 // Display the errors to the user
                 document.getElementById('passwordConfirmErr').innerHTML = errors['errors']['passwordConfirmErr'];
-            }
         }
     }
 

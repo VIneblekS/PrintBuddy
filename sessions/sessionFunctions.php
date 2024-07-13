@@ -10,7 +10,6 @@
     function startSession() {
         setStartParams();
         session_start();
-
     }
     
     function setSecureCookie($name, $value, $expire) {

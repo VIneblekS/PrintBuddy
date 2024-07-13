@@ -40,6 +40,8 @@ function addManual() {
         xhr.send(formData);
 
     } else {
+
+        // Show the error
         formError.classList.remove('hidden');
     }
 }

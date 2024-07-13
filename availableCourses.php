@@ -73,8 +73,8 @@
 	<?php include 'includes/footer.php' ?>
 </html>
 
-<script src="javascript/deleteCourse.js"></script>
-<script src ="javascript/showCourse.js"></script>
+<script src="javascript/delete.js"></script>
+<script src ="javascript/show.js"></script>
 <script src="https://cdn.botpress.cloud/webchat/v2/inject.js"></script>
 <script src="https://mediafiles.botpress.cloud/48385c87-3c59-40fe-b72c-ff429e635db2/webchat/v2/config.js"></script>
 

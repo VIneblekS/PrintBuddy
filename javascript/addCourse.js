@@ -27,7 +27,11 @@ function sendData(courseId, forms) {
     let promises = [];
 
     forms.forEach(function(form, index) {
+
+        // Go arount the form from the pop up
         if (form.id != 'courseSectionForm') {
+
+            // Append the needed data to the form one
             let formData = new FormData(form);
             formData.append('courseId', courseId);
             formData.append('sectionOrder', index + 1);
@@ -57,7 +61,10 @@ function sendData(courseId, forms) {
 }
 
 function createNewCourse() {
+
     return new Promise((resolve, reject) => {
+
+        // Append the needed data to the form one
         let formData = new FormData();
         formData.append('courseTitle', titleInput.value);
         formData.append('courseDescription', descriptionInput.value);
@@ -81,6 +88,8 @@ function createNewCourse() {
 }
 
 function storeTheData() {
+
+    // Select all the forms
     var forms = document.querySelectorAll('form');
 
     if (validateForms(forms) && titleInput.value.trim() !== '' && descriptionInput.value.trim() !== '') {
@@ -90,6 +99,8 @@ function storeTheData() {
             redirect();
         });
     } else {
+        
+        // Show error
         formError.classList.remove('hidden');
     }
 }

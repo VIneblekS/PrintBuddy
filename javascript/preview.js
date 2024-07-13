@@ -38,7 +38,7 @@ function videoPreview(element) {
     let uploadText = element.parentNode.childNodes[1].childNodes[1];     
     let uploadContainer = element.parentNode.childNodes[1];
 
-    // Wait for a picture
+    // Wait for an input
     videoInput.addEventListener('input', function() {
         
         // Update the elements
@@ -65,7 +65,7 @@ function documentPreview(element) {
     let preview = element.childNodes[3].childNodes[3];
     let uploadText = element.childNodes[3].childNodes[1];     
 
-    // Wait for a picture
+    // Wait for a document
     documentInput.addEventListener('input', () => {
         
         // Rerieve the document

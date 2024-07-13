@@ -35,7 +35,7 @@
                         <h1 class = "text-base text-primaryColor font-bold">Imagine descriptivă</h1>
                     </div>
                     <label onclick = "imagePreview(this)">
-                        <input type="file" id="previewImageInput" class="hidden">
+                        <input type="file" id="previewImageInput" class="hidden" accept="image/*">
                         <div class = "w-54 h-54 sm:h-60 sm:w-60 md:w-67 md:h-67 lg:w-88 lg:h-88 flex justify-center items-center border border-dashed border-placeholderGray">
                             <p class = "text-xs text-placeholderGray">Încarcă o imagine!</p>
                             <img src="" alt="" class = "w-54 h-54 sm:h-60 sm:w-60 md:w-67 md:h-67 lg:w-88 lg:h-88 hidden">
