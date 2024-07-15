@@ -16,7 +16,7 @@
 		<script src="https://cdn.tailwindcss.com"></script>
 		<script src="../javascript/tailwindAddOns.js"></script>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="css/customClases.css">
+		<link rel="stylesheet" href="../css/customClases.css">
 		<title>Printbuddy</title>
 	</head>
 
@@ -31,7 +31,7 @@
                         <div class = "w-1 h-54 sm:h-70 rounded-xl bg-primaryColor"></div>
                         <div class = "flex flex-col gap-4 justify-center">
                             <p class = "text-1.5xl md:text-2.5xl font-bold text-primaryColor">Prezentare generală</p>
-                            <p class = "text-sm sm:text-base md:text-lg text-left w-80 sm:w-105 md:w-105"><?php echo nl2br($manual['description'])?></p>
+                            <p class = "text-sm sm:text-base md:text-lg text-left w-80 sm:w-105 md:w-105"><?php echo $manual['description']?></p>
                         </div>
                     </div>
                 </div>

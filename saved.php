@@ -41,9 +41,9 @@
 					<?php foreach($manuals as $manual): ?>
 						<div id = "<?php echo "manuals/".strtolower(str_replace(' ', '_', $manual['name']))?>" class = "relative w-80.5 h-80.5 sm:w-108.5 sm:h-108.5 md:w-80.5 md:h-80.5 p-6 border border-primaryColor rounded-xl shadow-md shadow-black/15">						
 							<img src="<?php echo "manuals/uploads/".$manual['image']?>" alt="" class = "w-68 h-68 sm:w-96 sm:h-96 md:w-68 md:h-68" onclick="showManual(this.parentElement)">
-							<div id="<?php echo $manual['name']?>" class = "flex justify-center items-center gap-2 absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white px-4">
-								<p class = "text-base" onclick="showManual(this.parentElement.parentElement)"><?php echo $manual['name'] ?></p>
-								<img src="generalIcons/unsaveIcon.png" alt="" class = "w-8 h-8" onclick="unSave(this.parentElement)">
+							<div id="<?php echo $manual['name']?>" class = "flex justify-center items-center gap-2 absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white">
+								<p class = "pl-4 bg-white <?php if(!checkIfConnected()) echo "pr-4" ?> text-base whitespace-nowrap" onclick="showManual(this.parentElement.parentElement)"><?php echo $manual['name'] ?></p>
+								<img src="generalIcons/unsaveIcon.png" alt="" class = "w-12 h-8 pr-4 bg-white" onclick="unSave(this.parentElement)">
 							</div>
 						</div>
 					<?php endforeach ?>
@@ -60,5 +60,5 @@
 </html>
 
 <script src="javascript/save.js"></script>
-<script src ="javascript/showManual.js"></script>
+<script src ="javascript/show.js"></script>
 

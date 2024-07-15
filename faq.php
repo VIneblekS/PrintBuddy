@@ -48,7 +48,7 @@
 										<img id="<?php echo $faq['id']?>" src="generalIcons/discardIcon.png" alt="" class = "hidden md:block w-3 h-3 absolute left-0 sm:left-full sm:ml-5" onclick="togglePopUp(this.id)">
 									<?php endif ?>
 								</div>
-								<p id = "answer" class = "hidden text-sm sm:text-base md:text-lg px-5"><?php echo $faq['answer']?></p>
+								<p id = "answer" class = "hidden text-sm sm:text-base md:text-lg px-5"><?php echo nl2br($faq['answer'])?></p>
 							</div>
 							<?php if(next($faqs)): ?>
 								<div class = "w-full h-px bg-primaryColor"></div>	
@@ -65,7 +65,7 @@
 				<?php endif ?>			
 			</div>
 		</div>
-		<div id = "popUp" class = "fixed top-0 left-0 w-full h-full backdrop-blur-sm bg-primaryColor bg-opacity-10 flex justify-center items-center hidden">
+		<div id = "popUp" class = "z-40 fixed top-0 left-0 w-full h-full backdrop-blur-sm bg-primaryColor bg-opacity-10 flex justify-center items-center hidden">
 			<div class = "w-82 sm:w-105 sm:h-44 h-40 md:w-135 shadow-xl shadow-black/15 absolute bg-white flex justify-center items-center rounded-2xl">
 				<div class = "flex flex-col items-center gap-3 md:gap-6 w-72 sm:w-96 md:w-120">	
 					<h1 class = "text-sm md:text-base lg:text-lg">Ești sigur că dorești să ștergi acestă întrebare definitiv?</h1>

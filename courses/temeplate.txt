@@ -20,7 +20,7 @@
 		<script src="https://cdn.tailwindcss.com"></script>
 		<script src="../javascript/tailwindAddOns.js"></script>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="css/customClases.css">
+		<link rel="stylesheet" href="../css/customClases.css">
 		<title>Printbuddy</title>
 	</head>
 
@@ -39,7 +39,7 @@
 
                 <?php switch($section['sectionType']):
                     case "subtitle": ?>
-                        <p class = "text-1.5xl md:text-2.5xl font-bold text-primaryColor"><?php echo $sectionData['0']['content']?></p>
+                        <p class = "text-1.5xl md:text-2.5xl font-bold text-primaryColor text-center px-4"><?php echo $sectionData['0']['content']?></p>
                     <?php break ?>
                     <?php case "text": ?>
                         <p class = "text-sm sm:text-base md:text-lg w-82 sm:w-105 md:w-150"><?php echo nl2br($sectionData['0']['content'])?></p>

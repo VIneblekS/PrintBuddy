@@ -3,11 +3,10 @@
 		<div class = "flex gap-4 sm:gap-16 md:gap-20">
 			<div class = "flex flex-col gap-1 md:gap-1.5">
 				<h1 class = "text-10px text-white sm:text-sm md:text-lg">Servicii</h1>
-				<a href = "courses.php" class = "text-8px text-white sm:text-sx md:text-sm">Cursuri</a>
-				<a href = "manuals.php" class = "text-8px text-white sm:text-sx md:text-sm">Manuale</a>
-				<a href = "FAQ.php" class = "text-8px text-white sm:text-sx md:text-sm">FAQ</a>
+				<a href = "availableCourses.php" class = "text-8px text-white sm:text-sx md:text-sm">Cursuri</a>
+				<a href = "availableManuals.php" class = "text-8px text-white sm:text-sx md:text-sm">Manuale</a>
+				<a href = "faq.php" class = "text-8px text-white sm:text-sx md:text-sm">FAQ</a>
 				<a href = "https://discord.gg/36bhhQe3Nu" target = "_blank" class = "text-8px text-white sm:text-sx md:text-sm">Comunitate</a>
-				<a href = "help.php" class = "text-8px text-white sm:text-sx md:text-sm">Asistență AI</a>
 			</div>
 			<div class = "flex flex-col gap-1 md:gap-1.5">
 				<h1 class = "text-10px text-white sm:text-sm md:text-lg">Contactează-ne</h1>

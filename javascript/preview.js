@@ -58,33 +58,49 @@ function videoPreview(element) {
 };
 
 function documentPreview(element) {
-
-    // Retrieve the input element
+    // Retrieve the necessary elements
     let documentInput = element.childNodes[1];
     let uploadContainer = element.childNodes[3];
     let preview = element.childNodes[3].childNodes[3];
-    let uploadText = element.childNodes[3].childNodes[1];     
+    let uploadText = element.childNodes[3].childNodes[1];
 
-    // Wait for a document
-    documentInput.addEventListener('input', () => {
-        
-        // Rerieve the document
-        const document = documentInput.files[0];
-        if (document) {
+    // Wait for a document input change
+    documentInput.addEventListener('change', () => {
+        const file = documentInput.files[0];
 
-            // New reader object
-            const reader = new FileReader();
+        if (file) {
+            // Check if the selected file is a PDF
+            if (file.type === 'application/pdf') {
+                const reader = new FileReader();
 
-            reader.onload = function() {
+                reader.onload = function(event) {
+                    const typedArray = new Uint8Array(event.target.result);
+                    displayPDF(typedArray);
+                };
 
-                // Update the elements
-                preview.src = this.result;
-                uploadText.classList.add('hidden');
-                preview.classList.remove('hidden');
-                uploadContainer.classList.remove('border');
-            };
-
-            reader.readAsDataURL(document);
+                reader.readAsArrayBuffer(file);
+            } else {
+                alert('Please select a PDF file.');
+            }
         }
     });
-};
+
+    function displayPDF(arrayBuffer) {
+        // Create a blob object from the array buffer
+        const blob = new Blob([arrayBuffer], { type: 'application/pdf' });
+
+        // Create a URL for the blob
+        const url = URL.createObjectURL(blob);
+
+        // Set iframe src to the blob URL
+        preview.src = url;
+
+        // Hide upload text and show preview
+        uploadText.classList.add('hidden');
+        preview.classList.remove('hidden');
+        uploadContainer.classList.remove('border');
+
+        // Clean up the blob URL when done
+        URL.revokeObjectURL(url);
+    }
+}

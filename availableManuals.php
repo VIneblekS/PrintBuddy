@@ -51,11 +51,11 @@
 					<div id="<?php echo $manual['id']?>">
 						<div id = "<?php echo "manuals/".strtolower(str_replace(' ', '_', $manual['name']))?>" class = "relative w-80.5 h-80.5 sm:w-108.5 sm:h-108.5 md:w-80.5 md:h-80.5 p-6 border border-primaryColor rounded-xl shadow-md shadow-black/15">						
 							<img src="<?php echo "manuals/uploads/".$manual['image']?>" alt="" class = "w-68 h-68 sm:w-96 sm:h-96 md:w-68 md:h-68" onclick="showManual(this.parentElement)">
-							<div id="<?php echo $manual['name']?>" class = "flex justify-center items-center gap-2 absolute -bottom-3 left-1/2 -translate-x-1/2 bg-white px-4">
-								<p class = "text-base  whitespace-nowrap" onclick="showManual(this.parentElement.parentElement)"><?php echo $manual['name'] ?></p>
+							<div id="<?php echo $manual['name']?>" class = "flex justify-center items-center gap-2 absolute -bottom-3 left-1/2 -translate-x-1/2 bg-white">
+								<p class = "pl-4 bg-white <?php if(!checkIfConnected()) echo "pr-4" ?> text-base whitespace-nowrap" onclick="showManual(this.parentElement.parentElement)"><?php echo $manual['name'] ?></p>
 								<?php if(checkIfConnected()):?>
-									<img src="generalIcons/savedIcon.png" alt="" class = "w-6 h-6 <?php if(in_array($manual['name'], $saved)) echo "hidden" ?>" onclick="toggleSaved(this.parentElement)">
-									<img src="generalIcons/filledSavedIcon.png" alt="" class = "w-6 h-6 <?php if(!in_array($manual['name'], $saved)) echo "hidden" ?>" onclick="toggleSaved(this.parentElement)">
+									<img src="generalIcons/savedIcon.png" alt="" class = "w-10 h-6 pr-4 bg-white <?php if(in_array($manual['name'], $saved)) echo "hidden" ?>" onclick="toggleSaved(this.parentElement)">
+									<img src="generalIcons/filledSavedIcon.png" alt="" class = "w-10 h-6 pr-4 bg-white <?php if(!in_array($manual['name'], $saved)) echo "hidden" ?>" onclick="toggleSaved(this.parentElement)">
 								<?php endif ?>
 							</div>
 							<?php if($admin): ?>
@@ -73,7 +73,7 @@
 				<?php endif ?>	
 			</div>
 		</div>
-		<div id = "popUp" class = "fixed top-0 left-0 w-full h-full backdrop-blur-sm bg-primaryColor bg-opacity-10 flex justify-center items-center hidden">
+		<div id = "popUp" class = "z-40 fixed top-0 left-0 w-full h-full backdrop-blur-sm bg-primaryColor bg-opacity-10 flex justify-center items-center hidden">
 			<div class = "w-82 sm:w-105 sm:h-44 h-40 md:w-135 shadow-xl shadow-black/15 absolute bg-white flex justify-center items-center rounded-2xl">
 				<div class = "flex flex-col items-center gap-3 md:gap-6 w-72 sm:w-96 md:w-120">	
 					<h1 class = "text-sm md:text-base lg:text-lg">Ești sigur că dorești să ștergi acest manual definitiv?</h1>

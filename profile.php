@@ -26,8 +26,8 @@
 	<?php include 'includes/navbar.php' ?>
 	<?php include 'includes/sidebar.php' ?>
 
-	<body class = "mt-12 pt-8 pb-14 flex flex-col items-center">
-		<div class = "flex flex-col items-center gap-7 md:gap-8 w-82 sm:w-2/3 md:w-full">	
+	<body class = "mt-12 pt-6 pb-14 flex flex-col items-center">
+		<div class = "flex flex-col items-center gap-7 md:gap-4 w-82 sm:w-2/3 md:w-full">	
 		    <div class = "flex flex-col gap-5 justify-center items-center">	
                 <h1 class = "font-bold text-2xl sm:text-2.5xl md:text-4xl text-primaryColor">Profilul meu</h1>
                 <div class = "flex items-center gap-2.5">
@@ -109,16 +109,19 @@
                     </div>
                 </form>
             </div>
-            <div class = "flex flex-col gap-5">
-                <h1 class = "font-bold text-2xl sm:text-2.5xl md:text-4xl text-red-600">Șterge contul</h1>
-                <form id="deleteAccountForm" class = "flex flex-col gap-4">
-                    <div class = "relative flex flex-col gap-1">
-                        <input type="password" name = "passwordConfirm" class = "h-14 sm:w-96 md:w-105 lg:w-120 w-72 text-sm shadow-lg rounded-xl pl-8 outline-none border border-red-600">
-                        <p id="passwordConfirmErr" class = "h-4 text-sm text-red-600"></p>
-                        <h1 class = "absolute text-xs bg-white px-2.5 -top-2 left-3">Parola actuală</h1>
-                    </div>
-                    <input type="submit" value="Șterge contul" class = "w-32 h-9 md:w-30 md:h-9 items-center flex justify-center text-xs md:text-sm text-white bg-red-600 rounded-lg font-normal shadow-md shadow-black/20">
-                </form>
+            <div class = "flex flex-col gap-3">
+                <h1 class = "font-bold text-xl sm:text-2xl md:text-3xl text-red-600">Zonă periculoasă</h1>
+                <div class = "flex flex-col gap-6">
+                    <p class = "sm:w-96 md:w-105 lg:w-120 w-64 text-xs sm:text-sm md:text-sm">Confirmă ștergerea permanentă a contului tău prin introducerea parolei actuale.</p>
+                    <form id="deleteAccountForm" class = "flex flex-col gap-4">
+                        <div class = "relative flex flex-col gap-1">
+                            <input type="password" name = "passwordConfirm" class = "h-14 sm:w-96 md:w-105 lg:w-120 w-72 text-sm shadow-lg rounded-xl pl-8 outline-none border border-red-600">
+                            <p id="passwordConfirmErr" class = "h-4 text-sm text-red-600"></p>
+                            <h1 class = "absolute text-xs bg-white px-2.5 -top-2 left-3">Parola actuală</h1>
+                        </div>
+                        <input type="submit" value="Șterge contul" class = "w-32 h-9 md:w-30 md:h-9 items-center flex justify-center text-xs md:text-sm text-white bg-red-600 rounded-lg font-normal shadow-md shadow-black/20">
+                    </form>
+                </div>
             </div>
 		</div>
     </body>
