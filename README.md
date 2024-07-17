@@ -12,13 +12,13 @@ Printbuddy este site-ul perfect pentru pasionații de imprimare 3D. Aici poți g
 
 Printbuddy folosește o serie de tehnologii moderne pentru a oferi o experiență optimă utilizatorilor:
 
-- ![Visual Studio](https://img.icons8.com/color/48/000000/visual-studio-2019.png) **Visual Studio**: IDE-ul principal utilizat pentru dezvoltarea proiectului.
-- ![Botpress](https://img.icons8.com/color/48/000000/botpress.png) **Botpress**: Asistentul AI de pe site este creat și gestionat folosind Botpress.
-- ![CPanel](https://img.icons8.com/color/48/000000/cpanel.png) **CPanel**: Gestionarea site-ului și a serverului se realizează prin intermediul CPanel.
-- ![TailwindCSS](https://img.icons8.com/color/48/000000/tailwind-css.png) **TailwindCSS**: Framework-ul utilizat pentru stilizarea site-ului.
-- ![FileZilla](https://img.icons8.com/color/48/000000/filezilla.png) **FileZilla FTP**: Transferul de fișiere pe server se face folosind FileZilla.
-- ![Figma](https://img.icons8.com/color/48/000000/figma.png) **Figma**: Design-ul grafic al site-ului este realizat în Figma.
-- ![phpMyAdmin](https://img.icons8.com/color/48/000000/phpmyadmin.png) **phpMyAdmin**: Gestionarea bazelor de date se face prin phpMyAdmin.
+- **Visual Studio**: IDE-ul principal utilizat pentru dezvoltarea proiectului.
+- **Botpress**: Asistentul AI de pe site este creat și gestionat folosind Botpress.
+- **CPanel**: Gestionarea site-ului și a serverului se realizează prin intermediul CPanel.
+- **TailwindCSS**: Framework-ul utilizat pentru stilizarea site-ului.
+- **FileZilla FTP**: Transferul de fișiere pe server se face folosind FileZilla.
+- **Figma**: Design-ul grafic al site-ului este realizat în Figma.
+- **phpMyAdmin**: Gestionarea bazelor de date se face prin phpMyAdmin.
 
 ---
 
@@ -28,7 +28,7 @@ Pentru a instala și rula Printbuddy pe mașina ta locală, urmează pașii de m
 
 1. **Descărcați și instalați XAMPP**: Vizitați [site-ul oficial XAMPP](https://www.apachefriends.org) și descărcați cea mai recentă versiune potrivită pentru sistemul dvs. de operare. Urmați instrucțiunile de instalare pentru a configura XAMPP.
 
-2. **Clonați acest repository**: După ce XAMPP este instalat, deschideți terminalul/linia de comandă și navigați către directorul `htdocs` din folderul de instalare XAMPP. Apoi, clonați acest depozit folosind următoarea comandă:
+2. **Clonați acest depozit**: După ce XAMPP este instalat, deschideți terminalul/linia de comandă și navigați către directorul `htdocs` din folderul de instalare XAMPP. Apoi, clonați acest depozit folosind următoarea comandă:
     ```sh
     git clone https://github.com/username/Printbuddy.git
     ```
