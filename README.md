@@ -20,15 +20,15 @@ Printbuddy folosește o serie de tehnologii moderne pentru a oferi o experienț�
 - **Figma**: Design-ul grafic al site-ului este realizat în Figma.
 - **phpMyAdmin**: Gestionarea bazelor de date se face prin phpMyAdmin.
 
-<p align="center">
-  <img src="https://img.icons8.com/color/48/000000/figma.png" alt="Figma"/>
-  <img src="https://img.icons8.com/color/48/000000/botpress.png" alt="Botpress"/>
-  <img src="https://img.icons8.com/color/48/000000/visual-studio-2019.png" alt="Visual Studio"/>
-  <img src="https://img.icons8.com/color/48/000000/tailwind-css.png" alt="TailwindCSS"/>
-  <img src="https://img.icons8.com/color/48/000000/cpanel.png" alt="CPanel"/>
-  <img src="https://img.icons8.com/color/48/000000/filezilla.png" alt="FileZilla FTP"/>
-  <img src="https://img.icons8.com/color/48/000000/phpmyadmin.png" alt="phpMyAdmin"/>
-</p>
+# <p align="center">
+#  <img src="https://img.icons8.com/color/48/000000/figma.png" alt="Figma"/>
+#  <img src="https://img.icons8.com/color/48/000000/botpress.png" alt="Botpress"/>
+#  <img src="https://img.icons8.com/color/48/000000/visual-studio-2019.png" alt="Visual Studio"/>
+#  <img src="https://img.icons8.com/color/48/000000/tailwind-css.png" alt="TailwindCSS"/>
+#  <img src="https://img.icons8.com/color/48/000000/cpanel.png" alt="CPanel"/>
+#  <img src="https://img.icons8.com/color/48/000000/filezilla.png" alt="FileZilla FTP"/>
+#  <img src="https://img.icons8.com/color/48/000000/phpmyadmin.png" alt="phpMyAdmin"/>
+# </p>
 
 ---
 
