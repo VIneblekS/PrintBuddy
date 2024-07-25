@@ -8,6 +8,20 @@ Printbuddy este site-ul perfect pentru pasionații de imprimare 3D. Aici poți g
 
 ---
 
+## Tehnologii Utilizate
+
+Printbuddy folosește o serie de tehnologii moderne pentru a oferi o experiență optimă utilizatorilor:
+
+- **Visual Studio**: IDE-ul principal utilizat pentru dezvoltarea proiectului.
+- **Botpress**: Asistentul AI de pe site este creat și gestionat folosind Botpress.
+- **CPanel**: Gestionarea site-ului și a serverului se realizează prin intermediul CPanel.
+- **TailwindCSS**: Framework-ul utilizat pentru stilizarea site-ului.
+- **FileZilla FTP**: Transferul de fișiere pe server se face folosind FileZilla.
+- **Figma**: Design-ul grafic al site-ului este realizat în Figma.
+- **phpMyAdmin**: Gestionarea bazelor de date se face prin phpMyAdmin.
+
+---
+
 ## Instrucțiuni de instalare
 
 Pentru a instala și rula Printbuddy pe mașina ta locală, urmează pașii de mai jos:
