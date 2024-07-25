@@ -6,8 +6,8 @@
 
         session_start();
         //
-        $question = $_POST['question'];
-        $answer = $_POST['answer'];
+        $question = filter_var($_POST['question'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $answer = filter_var($_POST['answer'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $author = $_SESSION['username'];
         //
         $sql = "INSERT INTO faqs (question, answer, author) VALUES ('$question', '$answer', '$author')";

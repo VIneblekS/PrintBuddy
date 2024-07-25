@@ -11,7 +11,7 @@
     }
 
     function insertSubtitleContent($conn, $sectionId) {
-        $textContent = $_POST['subtitle'];
+        $textContent = filter_var($_POST['subtitle'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $contentType = 'subtitle';
         //
         $sql = "INSERT INTO section_content (sectionId, contentType, content) VALUES ('$sectionId', '$contentType', '$textContent')";
@@ -19,7 +19,7 @@
     }
 
     function insertTextContent($conn, $sectionId) {
-        $textContent = $_POST['text'];
+        $textContent = filter_var($_POST['text'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $contentType = 'text';
         //
         $sql = "INSERT INTO section_content (sectionId, contentType, content) VALUES ('$sectionId', '$contentType', '$textContent')";
@@ -65,7 +65,7 @@
             move_uploaded_file($imgTmpName, $_SERVER['DOCUMENT_ROOT'].'/courses/uploads/'.$imageName);
             //
             $imageContent = $imageName;
-            $textContent = $_POST['description'.$i];
+            $textContent = filter_var($_POST['description'.$i], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $contentType = 'text';
             //
             $sql = "INSERT INTO section_content (sectionId, contentType, content) VALUES ('$sectionId', '$contentType', '$textContent')";
@@ -85,7 +85,7 @@
         move_uploaded_file($imgTmpName, $_SERVER['DOCUMENT_ROOT'].'/courses/uploads/'.$imageName);
         //
         $imageContent = $imageName;
-        $textContent = $_POST['description'];
+        $textContent = filter_var($_POST['description'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $contentType = 'text';
         //
         $sql = "INSERT INTO section_content (sectionId, contentType, content) VALUES ('$sectionId', '$contentType', '$textContent')";
@@ -97,7 +97,7 @@
     }
 
     function insertVideoContent($conn, $sectionId) {
-        $video = $_POST['video'];
+        $video = filter_var($_POST['video'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
         if(strpos($video, 'youtu.be/') !== FALSE)
             $video = str_replace('youtu.be', 'youtube.com/embed', $video);

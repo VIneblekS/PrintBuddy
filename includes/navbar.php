@@ -15,7 +15,7 @@
 			<div class = "h-4 w-px bg-primaryColor/30"></div>
 			<a href = "availableCourses.php" class = "text-normal text-base text-primaryColor">Cursuri</a>
 			<div class = "h-4 w-px bg-primaryColor/30"></div>
-			<a href = "availableManuals.php" class = "text-normal text-base text-primaryColor">Manaule</a>
+			<a href = "availableManuals.php" class = "text-normal text-base text-primaryColor">Manuale</a>
 			<div class = "h-4 w-px bg-primaryColor/30"></div>
 			<a href = "faq.php" class = "text-normal text-base text-primaryColor">FAQ</a>
 		</div>

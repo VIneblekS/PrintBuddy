@@ -3,8 +3,8 @@
    
     session_start();
     //
-    $title = $_POST['courseTitle'];
-    $description = $_POST['courseDescription'];
+    $title = filter_var($_POST['courseTitle'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $description = filter_var($_POST['courseDescription'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $author = $_SESSION['username'];
     //
     $_FILES['previewImage']['name'] = 'previewImage_'.str_replace(' ', '_', $title);

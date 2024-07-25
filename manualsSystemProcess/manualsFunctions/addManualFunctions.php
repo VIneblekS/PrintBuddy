@@ -3,10 +3,10 @@
         
         session_start();
         //
-        $name = $_POST['name'];
-        $description = $_POST['description'];
+        $name = filter_var($_POST['name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $description = filter_var($_POST['description'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $author = $_SESSION['username'];
-        $video = $_POST['video'];
+        $video = filter_var($_POST['video'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
         if(strpos($video, 'youtu.be/') !== FALSE)
             $video = str_replace('youtu.be', 'youtube.com/embed', $video);

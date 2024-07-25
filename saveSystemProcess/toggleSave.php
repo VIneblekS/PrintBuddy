@@ -3,7 +3,7 @@
 
     session_start();
 
-    $printerName = $_POST['printerName'];
+    $printerName = filter_var($_POST['printerName'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $username = $_SESSION['username'];
     //
     $selectSql = "SELECT * FROM saves WHERE printerName = '$printerName' AND username = '$username'";
