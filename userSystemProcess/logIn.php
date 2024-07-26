@@ -11,7 +11,7 @@
     if(isset($_POST['logIn'])) {
 
         // Validate form fields
-        check_user($credentials, $errors);
+        check_user($conn, $credentials, $errors);
         check_password($credentials, $errors);
         check_credentials($conn, $credentials, $errors);
         

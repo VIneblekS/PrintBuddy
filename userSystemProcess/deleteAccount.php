@@ -16,6 +16,9 @@
 
         $sql = "DELETE FROM users WHERE username = '$username'";
         mysqli_query($conn['main'], $sql);
+
+        $sql = "DELETE FROM saves WHERE username = '$username'";
+        mysqli_query($conn['main'], $sql);
         //
         logOut();
         //

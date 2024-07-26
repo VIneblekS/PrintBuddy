@@ -21,7 +21,7 @@ function logIn(event) {
     xhr.onload = function() {
         if (this.status == 200) {
 
-           // Recieve the errors 
+            // Recieve the errors 
             var errors = JSON.parse(this.responseText);
 
             // Check for any errors

@@ -1,13 +1,4 @@
 <?php
-    function check_user(&$credentials, &$errors) {
-        if(empty($_POST['user']) || trim($_POST['user']) == '')
-            $errors['userErr'] = 'Acest câmp este obligatoriu.';
-        else {
-            $credentials['user'] = trim($_POST['user']);
-            $credentials['user'] = filter_var($credentials['user'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        }    
-    }
-
     function check_password(&$credentials, &$errors) {
         if(empty($_POST['password']) || trim($_POST['password']) == '')
             $errors['passwordErr'] = 'Acest câmp este obligatoriu.';
@@ -32,6 +23,19 @@
 		if ($resultData) return $resultData;
 		return 0;
 	}
+
+    function check_user($conn, &$credentials, &$errors) {
+        if(empty($_POST['user']) || trim($_POST['user']) == '')
+            $errors['userErr'] = 'Acest câmp este obligatoriu.';
+        else {
+            $credentials['user'] = trim($_POST['user']);
+            $credentials['user'] = filter_var($credentials['user'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            //
+            $user = $credentials['user'];
+            if (!check_usernameExists($conn, $user) && !check_emailExists($conn, $user))
+                $errors['userErr'] = 'Utilizator sau email invalid.';
+        }    
+    }
 
     function check_credentials($conn, &$credentials, &$errors) {
 	    $username = check_usernameExists($conn, $credentials['user']);
