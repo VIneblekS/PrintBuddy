@@ -6,7 +6,9 @@
 
         $faqId = $_POST['faqId'];
         //
-        $sql = "DELETE FROM faqs WHERE id = '$faqId'";
-        mysqli_query($conn['main'], $sql);
+        $sql = "DELETE FROM faqs WHERE id = ?";
+        $stmt = mysqli_prepare($conn['main'], $sql);
+        mysqli_stmt_bind_param($stmt, 'i', $faqId);
+        mysqli_stmt_execute($stmt);
     }
 ?>

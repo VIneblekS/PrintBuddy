@@ -26,8 +26,10 @@
         
         move_uploaded_file($documentTmpName, $_SERVER['DOCUMENT_ROOT'].'/manuals/uploads/'.$documentName);
         //
-        $sql = "INSERT INTO manuals (name, description, image, video, document, author) VALUES ('$name', '$description', '$imageName', '$video', '$documentName', '$author')";
-        mysqli_query($conn['main'], $sql);
+        $sql = "INSERT INTO manuals (name, description, image, video, document, author) VALUES (?, ?, ?, ?, ?, ?)";
+        $stmt = mysqli_prepare($conn['main'], $sql);
+        mysqli_stmt_bind_param($stmt, 'ssssss', $name, $description, $imageName, $video, $documentName, $author);
+        mysqli_stmt_execute($stmt);
         $manualId = mysqli_insert_id($conn['main']); 
         //
         $temeplate = '../manuals/temeplate.txt';

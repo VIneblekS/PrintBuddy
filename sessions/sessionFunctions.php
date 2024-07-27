@@ -20,8 +20,10 @@
         session_regenerate_id(true);
         $currentId = session_id();
         //
-        $sql = "UPDATE tokens SET token = '$currentId' WHERE deviceId = '$deviceId'";
-        mysqli_query($conn['main'], $sql);
+        $sql = "UPDATE tokens SET token = ? WHERE deviceId = ?";
+        $stmt = mysqli_prepare($conn['main'], $sql);
+        mysqli_stmt_bind_param($stmt, 'ss', $currentId, $deviceId);
+        mysqli_stmt_execute($stmt);
         //
         setSecureCookie('accessToken', $currentId, time()+$refreshFrequency);
         //
@@ -31,8 +33,11 @@
     function storeSessionData($conn) {
         $currentId = session_id();
         //
-        $sql = "SELECT * FROM users INNER JOIN tokens ON (users.username = tokens.username AND tokens.token = '$currentId')";
-        $resultData = mysqli_query($conn['main'], $sql);
+        $sql = "SELECT * FROM users INNER JOIN tokens ON (users.username = tokens.username AND tokens.token = ?)";
+        $stmt = mysqli_prepare($conn['main'], $sql);
+        mysqli_stmt_bind_param($stmt, 's', $currentId);
+        mysqli_stmt_execute($stmt);
+        $resultData = mysqli_stmt_get_result($stmt);
 		$resultData = mysqli_fetch_assoc($resultData);
         //
         $_SESSION['username'] = $resultData['username'];

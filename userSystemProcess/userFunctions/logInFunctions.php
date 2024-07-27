@@ -7,8 +7,11 @@
     }
 
     function check_usernameExists($conn, $username) {
-		$sql = "SELECT * FROM users WHERE username = '$username'";
-		$resultData = mysqli_query($conn['main'], $sql);
+		$sql = "SELECT * FROM users WHERE username = ?";
+		$stmt = mysqli_prepare($conn['main'], $sql);
+        mysqli_stmt_bind_param($stmt, 's', $username);
+        mysqli_stmt_execute($stmt);
+        $resultData = mysqli_stmt_get_result($stmt);
 		$resultData = mysqli_fetch_assoc($resultData);
 		//
         if ($resultData) return $resultData;
@@ -16,8 +19,11 @@
 	}
 
 	function check_emailExists($conn, $email) {
-		$sql = "SELECT * FROM users WHERE email = '$email'";
-		$resultData = mysqli_query($conn['main'], $sql);
+		$sql = "SELECT * FROM users WHERE email = ?";
+		$stmt = mysqli_prepare($conn['main'], $sql);
+        mysqli_stmt_bind_param($stmt, 's', $email);
+        mysqli_stmt_execute($stmt);
+        $resultData = mysqli_stmt_get_result($stmt);
 		$resultData = mysqli_fetch_assoc($resultData);
         //
 		if ($resultData) return $resultData;
@@ -53,9 +59,12 @@
 	}
 
     function checkDeviceIdExists($conn, $id) {
-        $sql = "SELECT * FROM tokens WHERE deviceId = '$id'";
-        $resultData = mysqli_query($conn['main'], $sql);
-        $resultData = mysqli_fetch_assoc($resultData);
+        $sql = "SELECT * FROM tokens WHERE deviceId = ?";
+        $stmt = mysqli_prepare($conn['main'], $sql);
+        mysqli_stmt_bind_param($stmt, 's', $id);
+        mysqli_stmt_execute($stmt);
+        $resultData = mysqli_stmt_get_result($stmt);
+		$resultData = mysqli_fetch_assoc($resultData);
         //
         if($resultData) return 1;
         return 0;
@@ -70,15 +79,13 @@
     }
 
     function updateTokens($conn, $deviceId, $username) {
-        $sql = "SELECT * FROM tokens WHERE deviceId = '$deviceId'";
-        $resultData = mysqli_query($conn['main'], $sql);
-        $resultData = mysqli_fetch_assoc($resultData);
-        //
-        if($resultData)
-            $sql = "UPDATE tokens SET username = '$username' WHERE deviceId = '$deviceId'";
+        if(checkDeviceIdExists($conn, $deviceId))
+            $sql = "UPDATE tokens SET username = ? WHERE deviceId = ?";
         else
-            $sql = "INSERT INTO tokens (deviceId, username) VALUES ('$deviceId', '$username')";
-        mysqli_query($conn['main'], $sql);    
+            $sql = "INSERT INTO tokens (username, deviceId) VALUES (?, ?)";
+        $stmt = mysqli_prepare($conn['main'], $sql);
+        mysqli_stmt_bind_param($stmt, 'ss', $username, $id);
+        mysqli_stmt_execute($stmt);   
     }
 
     function setSecureCookie($name, $value, $expire) {

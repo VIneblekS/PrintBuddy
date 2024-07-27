@@ -14,8 +14,10 @@
     if (check_errors($errors)) {
 
         $newPassword = $credentials['password'];
-        $sql = "UPDATE users SET password = '$newPassword' WHERE username = '$username'";
-        mysqli_query($conn['main'], $sql);
+        $sql = "UPDATE users SET password = ? WHERE username = ?";
+        $stmt = mysqli_prepare($conn['main'], $sql);
+        mysqli_stmt_bind_param($stmt, 'ss', $newPassword, $username);
+        mysqli_stmt_execute($stmt);
         //
         setcookie('accessToken', false, time() - 10, '/');    
         //

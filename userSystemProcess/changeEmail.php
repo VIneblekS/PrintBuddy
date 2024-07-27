@@ -14,8 +14,10 @@
     if (check_errors($errors)) {
 
         $newEmail = $credentials['email'];
-        $sql = "UPDATE users SET email = '$newEmail' WHERE username = '$username'";
-        mysqli_query($conn['main'], $sql);
+        $sql = "UPDATE users SET email = ? WHERE username = ?";
+        $stmt = mysqli_prepare($conn['main'], $sql);
+        mysqli_stmt_bind_param($stmt, 'ss', $newEmail, $username);
+        mysqli_stmt_execute($stmt);
         //
         setcookie('accessToken', false, time() - 10, '/');    
         //

@@ -14,8 +14,10 @@
     if (check_errors($errors)) {
 
         $newFirstName = $credentials['firstName'];
-        $sql = "UPDATE users SET firstName = '$newFirstName' WHERE username = '$username'";
-        mysqli_query($conn['main'], $sql);
+        $sql = "UPDATE users SET firstName = ? WHERE username = ?";
+        $stmt = mysqli_prepare($conn['main'], $sql);
+        mysqli_stmt_bind_param($stmt, 'ss', $newFirstName, $username);
+        mysqli_stmt_execute($stmt);
         //
         setcookie('accessToken', false, time() - 10, '/');    
         //

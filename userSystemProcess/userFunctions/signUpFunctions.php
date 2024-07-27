@@ -1,9 +1,12 @@
 <?php
     function check_userExists($conn, $credentials) {
         $inputUsername = $credentials['username'];
-        $sql = "SELECT * FROM users WHERE username = '$inputUsername'";
+        $sql = "SELECT * FROM users WHERE username = ?";
         //
-        $resultData = mysqli_query($conn['main'], $sql);
+        $stmt = mysqli_prepare($conn['main'], $sql);
+        mysqli_stmt_bind_param($stmt, 's', $inputUsername);
+        mysqli_stmt_execute($stmt);
+        $resultData = mysqli_stmt_get_result($stmt);
         $resultData = mysqli_fetch_assoc($resultData);
         //
         if($resultData) return 1;
@@ -28,9 +31,12 @@
 
     function check_emailExists($conn, $credentials) {
         $inputEmail = $credentials['email'];
-        $sql = "SELECT * FROM users WHERE email = '$inputEmail'";
+        $sql = "SELECT * FROM users WHERE email = ?";
         //
-        $resultData = mysqli_query($conn['main'], $sql);
+        $stmt = mysqli_prepare($conn['main'], $sql);
+        mysqli_stmt_bind_param($stmt, 's', $inputEmail);
+        mysqli_stmt_execute($stmt);
+        $resultData = mysqli_stmt_get_result($stmt);
         $resultData = mysqli_fetch_assoc($resultData);
         //
         if($resultData) return 1;
@@ -120,8 +126,11 @@
                 $errors['passwordErr'] = 'Spațiile nu sunt permise în parolă.';    
         }
         //
-        $sql = "SELECT * FROM users WHERE username = '$username'";
-        $userInfo = mysqli_query($conn['main'], $sql);
+        $sql = "SELECT * FROM users WHERE username = ?";
+        $stmt = mysqli_prepare($conn['main'], $sql);
+        mysqli_stmt_bind_param($stmt, 's', $username);
+        mysqli_stmt_execute($stmt);
+        $userInfo = mysqli_stmt_get_result($stmt);
         $userInfo = mysqli_fetch_assoc($userInfo);
         //
         if(empty($errors['passwordErr']))
@@ -132,8 +141,11 @@
     }
 
     function checkDeviceIdExists($conn, $id) {
-        $sql = "SELECT * FROM tokens WHERE deviceId = '$id'";
-        $resultData = mysqli_query($conn['main'], $sql);
+        $sql = "SELECT * FROM tokens WHERE deviceId = ?";
+        $stmt = mysqli_prepare($conn['main'], $sql);
+        mysqli_stmt_bind_param($stmt, 's', $id);
+        mysqli_stmt_execute($stmt);
+        $resultData = mysqli_stmt_get_result($stmt);
         $resultData = mysqli_fetch_assoc($resultData);
         //
         if($resultData) return 1;
@@ -149,15 +161,13 @@
     }
 
     function updateTokens($conn, $deviceId, $username) {
-        $sql = "SELECT * FROM tokens WHERE deviceId = '$deviceId'";
-        $resultData = mysqli_query($conn['main'], $sql);
-        $resultData = mysqli_fetch_assoc($resultData);
-        //
-        if($resultData)
-            $sql = "UPDATE tokens SET username = '$username' WHERE deviceId = '$deviceId'";
+        if(checkDeviceIdExists($conn, $deviceId))
+            $sql = "UPDATE tokens SET username = ? WHERE deviceId = ?";
         else
-            $sql = "INSERT INTO tokens (deviceId, username) VALUES ('$deviceId', '$username')";
-        mysqli_query($conn['main'], $sql);    
+            $sql = "INSERT INTO tokens (username, deviceId) VALUES (?, ?)";
+        $stmt = mysqli_prepare($conn['main'], $sql);
+        mysqli_stmt_bind_param($stmt, 'ss', $username, $deviceId);
+        mysqli_stmt_execute($stmt);   
     }
 
     function setSecureCookie($name, $value, $expire) {
@@ -172,8 +182,10 @@
         $password = $credentials['password'];
         generateDeviceId($conn, $credentials);
         //
-        $sql = "INSERT INTO users (username, firstName, lastName, email, password) VALUES ('$username', '$firstName', '$lastName', '$email', '$password')";
-        mysqli_query($conn['main'], $sql);
+        $sql = "INSERT INTO users (username, firstName, lastName, email, password) VALUES (?, ?, ?, ?, ?)";
+        $stmt = mysqli_prepare($conn['main'], $sql);
+        mysqli_stmt_bind_param($stmt, 'sssss', $username, $firstName, $lastName, $email, $password);
+        mysqli_stmt_execute($stmt);
         //
         updateTokens($conn, $credentials['deviceId'], $username);
         //

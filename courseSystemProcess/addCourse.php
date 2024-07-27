@@ -13,9 +13,11 @@
     
     move_uploaded_file($imgTmpName, $_SERVER['DOCUMENT_ROOT'].'/courses/uploads/'.$imageName);
     //
-    $sql = "INSERT INTO courses (title, description, image, author) VALUES ('$title', '$description', '$imageName', '$author')";
-    mysqli_query($conn['main'], $sql);
-    $courseId = mysqli_insert_id($conn['main']); 
+    $sql = "INSERT INTO courses (title, description, image, author) VALUES (?, ?, ?, ?)";
+    $stmt = mysqli_prepare($conn['main'], $sql);
+    mysqli_stmt_bind_param($stmt, 'ssss', $title, $description, $imageName, $author);
+    mysqli_stmt_execute($stmt);
+    $courseId = mysqli_insert_id($conn['main']);
     //
     $temeplate = '../courses/temeplate.txt';
 

@@ -1,7 +1,15 @@
 <?php
 	include 'generalFunctions/generalFunctions.php';
 
-	if(!checkIfConnected())
+    if(checkIfConnected()) {
+		
+		session_start();
+
+		$admin = $_SESSION['admin'];
+
+        if(!$admin)
+            redirectToIndex();
+    } else
 		redirectToIndex();
 
 ?>

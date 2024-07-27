@@ -2,16 +2,22 @@
 	include 'databases/databases.php';
 
 	$sql = "SELECT COUNT(*) AS row_count FROM manuals";
-	$manualsNumber = mysqli_query($conn['main'], $sql);
-	$manualsNumber = mysqli_fetch_assoc($manualsNumber);
+	$stmt = mysqli_prepare($conn['main'], $sql);
+	mysqli_stmt_execute($stmt);
+    $manualsNumber = mysqli_stmt_get_result($stmt);
+    $manualsNumber = mysqli_fetch_assoc($manualsNumber);
 	
 	$sql = "SELECT COUNT(*) AS row_count FROM users";
-	$usersNumber = mysqli_query($conn['main'], $sql);
-	$usersNumber = mysqli_fetch_assoc($usersNumber);
+	$stmt = mysqli_prepare($conn['main'], $sql);
+	mysqli_stmt_execute($stmt);
+    $usersNumber = mysqli_stmt_get_result($stmt);
+    $usersNumber = mysqli_fetch_assoc($usersNumber);
 
 	$sql = "SELECT COUNT(*) AS row_count FROM courses";
-	$coursesNumber = mysqli_query($conn['main'], $sql);
-	$coursesNumber = mysqli_fetch_assoc($coursesNumber);
+	$stmt = mysqli_prepare($conn['main'], $sql);
+	mysqli_stmt_execute($stmt);
+    $coursesNumber = mysqli_stmt_get_result($stmt);
+    $coursesNumber = mysqli_fetch_assoc($coursesNumber);
 
 ?>
 

@@ -11,10 +11,14 @@
 	if(isset($_COOKIE['refreshToken']) && !isset($_COOKIE['accessToken']))
 		echo '<script src = "sessions/session.js"></script>';
 
-	session_start();
+	
 
-	if(checkIfConnected())
+	if(checkIfConnected()) {
+		
+		session_start();
+
 		$admin = $_SESSION['admin'];
+	}
 
 ?>
 

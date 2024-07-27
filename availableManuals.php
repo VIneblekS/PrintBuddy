@@ -11,9 +11,10 @@
 	if(isset($_COOKIE['refreshToken']) && !isset($_COOKIE['accessToken']))
 		echo '<script src = "sessions/session.js"></script>';
 
-	session_start();
-
 	if(checkIfConnected()) {
+		
+		session_start();
+
 		$admin = $_SESSION['admin'];
 		$username = $_SESSION['username'];
 		$sql = "SELECT * FROM saves WHERE username = '$username'";
