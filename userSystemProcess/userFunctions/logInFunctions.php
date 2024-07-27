@@ -84,7 +84,7 @@
         else
             $sql = "INSERT INTO tokens (username, deviceId) VALUES (?, ?)";
         $stmt = mysqli_prepare($conn['main'], $sql);
-        mysqli_stmt_bind_param($stmt, 'ss', $username, $id);
+        mysqli_stmt_bind_param($stmt, 'ss', $username, $deviceId);
         mysqli_stmt_execute($stmt);   
     }
 

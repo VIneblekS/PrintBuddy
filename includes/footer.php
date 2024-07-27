@@ -15,9 +15,9 @@
 			</div>
 		</div>
 		<div class = "flex flex-col gap-3 md:gap-6">
-			<a href="https://instagram.com"><img src="generalIcons/instagramIcon.png" alt="" class = "w-4 md:w-6"></a>
-			<a href="https://facebook.com"><img src="generalIcons/facebookIcon.png" alt="" class = "w-4 md:w-6"></a>
-			<a href="https://X.com"><img src="generalIcons/twitterIcon.png" alt="" class = "w-4 md:w-6"></a>
+			<a href="https://www.instagram.com/printbuddy.ro/" target = "_blank"><img src="generalIcons/instagramIcon.png" alt="" class = "w-4 md:w-6"></a>
+			<a href="https://www.facebook.com/profile.php?id=61563241562137" target = "_blank"><img src="generalIcons/facebookIcon.png" alt="" class = "w-4 md:w-6"></a>
+			<a href="https://x.com/Printbuddy_ro" target = "_blank"><img src="generalIcons/twitterIcon.png" alt="" class = "w-4 md:w-6"></a>
 		</div>
         <div class = "h-28 w-px bg-white/25 md:h-44"></div>
 		<div class = "flex flex-col gap-1 items-center justify-center md:gap-3">
